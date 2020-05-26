@@ -1,0 +1,142 @@
+@font-face {
+    font-family: valera-round;
+    src: url('fonts/VarelaRound-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: proximanova-soft;
+    src: url('fonts/proximanovasoft-bold-webfont.ttf') format('truetype');
+}
+
+
+body {
+    font-family: "Source sans pro", sans-serif;
+}
+
+h1 {
+    font-family: proximanova-soft, Helvetica, sans-serif;			
+    font-size: 32px;
+    /*font-weight: bold;*/
+    color: black;
+}
+
+h2 {
+    font-family: proximanova-soft, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(243, 114, 35, 1);
+}
+
+h3{
+    font-family: proximanova-soft, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;    
+    color: black;
+}
+
+
+
+.top-space{
+    min-height: 30px;
+}
+
+.header {
+    border:0px solid black;
+
+    max-width: 800px;
+    /*background-color: #F1F1F1;*/
+    margin: auto;
+    background-color: ;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* The navbar container */
+.bar {
+    /*max-width: 800px;*/
+    min-height: 20px;
+    /*background-color: #F1F1F1;*/
+    margin: auto;
+  /*overflow: hidden;*/
+  text-align: center;
+
+  background-color: rgba(243, 114, 35, 0.2);
+
+  padding: 10px;
+}
+
+.content {
+    max-width: 800px;
+  /*background-color: #F1F1F1;*/
+    margin: auto;
+  background: white;
+  border:0px solid black;
+  padding: 20px;
+  /*text-align: left;
+  padding: 10px;*/
+}
+
+.footer {
+    /*max-width: 800px;*/
+    min-height: 20px;
+    /*background-color: #F1F1F1;*/
+    margin: auto;
+  /*overflow: hidden;*/
+  text-align: center;
+  background-color: #F37223/*333*/;
+  padding: 10px;
+}
+
+.footer2 {
+    /*max-width: 800px;*/
+    height: 8px;
+    /*background-color: #F1F1F1;*/
+    margin: auto;
+    /*overflow: hidden;*/
+    text-align: center;
+    background-color: rgba(243, 114, 35, 0.2);
+}
+
+
+
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid black;
+}
+
+td {
+    padding: 7px;
+    vertical-align: text-top;
+}
+
+.table-col-timetable {
+    /*width: 150px;*/
+  background-color: rgba(243, 114, 35, 0.2);
+}
+
+.date {
+    font-weight: bold;
+    
+}
+
+.registerdiv{
+    
+}
+
+a {
+    color: rgb(243, 114, 35);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(243, 114, 35);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(243, 114, 35);
+    text-decoration: underline;
+}
