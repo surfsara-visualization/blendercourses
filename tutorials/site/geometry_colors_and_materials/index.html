@@ -1,0 +1,716 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.3">
+    
+    
+      
+        <title>Creating geometry, colors and materials - Introduction to Python Scripting in Blender</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e35a1a6.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creating-geometry-colors-and-materials" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Python Scripting in Blender" class="md-header-nav__button md-logo" aria-label="Introduction to Python Scripting in Blender">
+      
+  <img src="../images/surf-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Python Scripting in Blender
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Creating geometry, colors and materials
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Python Scripting in Blender" class="md-nav__button md-logo" aria-label="Introduction to Python Scripting in Blender">
+      
+  <img src="../images/surf-logo.svg" alt="logo">
+
+    </a>
+    Introduction to Python Scripting in Blender
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api_basics/" title="Blender API basics" class="md-nav__link">
+      Blender API basics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../accessing_data/" title="Accessing Blender data" class="md-nav__link">
+      Accessing Blender data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Creating geometry, colors and materials
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Creating geometry, colors and materials" class="md-nav__link md-nav__link--active">
+      Creating geometry, colors and materials
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-object-with-a-mesh" class="md-nav__link">
+    Creating an object with a mesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-a-filled-disk-from-scratch" class="md-nav__link">
+    Exercise 3: a filled disk from scratch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-vertex-colors-to-a-mesh" class="md-nav__link">
+    Adding vertex colors to a mesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-4-making-triangles-and-make-a-vertex-color-layer" class="md-nav__link">
+    Exercise 4: making triangles and make a vertex color layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-5-coloring-your-triangles" class="md-nav__link">
+    Exercise 5: coloring your triangles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-material" class="md-nav__link">
+    Adding a material
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../final_project/" title="Final project" class="md-nav__link">
+      Final project
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contact/" title="Contact & information" class="md-nav__link">
+      Contact & information
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+
+                  </div>                    
+                </div>
+              <br>
+              <a class="md-nav__item" href="https://www.surf.nl"><img style="height:48px" src=../images/surf-logo.svg></a><br>
+              <a class="md-nav__item" href="https://prace-ri.eu/"><img style="height:48px" src=../images/prace-logo.png></a>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-object-with-a-mesh" class="md-nav__link">
+    Creating an object with a mesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-3-a-filled-disk-from-scratch" class="md-nav__link">
+    Exercise 3: a filled disk from scratch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-vertex-colors-to-a-mesh" class="md-nav__link">
+    Adding vertex colors to a mesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-4-making-triangles-and-make-a-vertex-color-layer" class="md-nav__link">
+    Exercise 4: making triangles and make a vertex color layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-5-coloring-your-triangles" class="md-nav__link">
+    Exercise 5: coloring your triangles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-material" class="md-nav__link">
+    Adding a material
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="creating-geometry-colors-and-materials">Creating geometry, colors and materials<a class="headerlink" href="#creating-geometry-colors-and-materials" title="Permanent link">&para;</a></h1>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/eZ4ZuzwN5fI" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="creating-an-object-with-a-mesh">Creating an object with a mesh<a class="headerlink" href="#creating-an-object-with-a-mesh" title="Permanent link">&para;</a></h3>
+<p>If we want to create a new mesh we can do this by calling the <code>new</code> function like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">mesh</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">meshes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;newMesh&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>This will create the mesh but it is not linked to an object (it will not show in the <em>Outliner</em>). So we make a new object and link the object to the mesh:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">obj</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;newObject&quot;</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>We can actually verify this worked correctly by checking the value of <code>obj.data</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">&gt;&gt;&gt; obj.data</span>
+<span class="err">bpy.data.meshes[&#39;newMesh&#39;]</span>
+</code></pre></div>
+
+
+<p>If you check the Outliner in the user interface you will see both the object <code>newObject</code> and the mesh <code>newMesh</code> linked to it.</p>
+<p>Now we have an empty mesh, linked to an object. We will now construct a simple piece geometry to show how this is done in Blender. Vertices are defined by their x, y and z values like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">verts</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span>
+</code></pre></div>
+
+
+<p>Edges are defined as a tuple holding two indices pointing to two vertices in the <code>verts</code> list. So (0,1) refers to a line from vertex (0,0,0) (index 0 in <code>verts</code>) to (0,2,0) (index 1 in <code>verts</code>) in this example. We make the following edges:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">edges</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">]</span>
+</code></pre></div>
+
+
+<p>To make faces we need three or more vertices. Per face you make a tuple of three or more indices pointing to three vertices in the <code>verts</code> list. For example the face <code>(0,1,2)</code> is a face made up from the vertices (0,0,0), (0,2,0) and (0,1,2), which are at index 0, 1 and 2 in the <code>verts</code> list. For now lets make one face:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">faces</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span>
+</code></pre></div>
+
+
+<p>We now use a function from the Python API to make a mesh from our verts, edges and faces:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">mesh</span><span class="o">.</span><span class="n">from_pydata</span><span class="p">(</span><span class="n">verts</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Now the mesh and the object are created, but it does not yet show in the <em>3D viewport</em> or the <em>Outliner</em>. This is because we still need to link the new object to an existing collection and in so doing to a scene. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>To summarize here is the full code to generate this geometry:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">bpy</span>
+
+<span class="c1"># Create a new mesh</span>
+<span class="n">ob_name</span> <span class="o">=</span> <span class="s2">&quot;triangle&quot;</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">meshes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">ob_name</span> <span class="o">+</span> <span class="s2">&quot;_mesh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a new object with the mesh</span>
+<span class="n">ob</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">ob_name</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
+
+<span class="c1"># Define some geometry</span>
+<span class="n">verts</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># These are indices pointing to elements in the list verts</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># These are indices pointing to elements in the list verts</span>
+
+<span class="c1"># Add it to the mesh</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">from_pydata</span><span class="p">(</span><span class="n">verts</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
+
+<span class="c1"># Link the object to the first collection</span>
+<span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">ob</span><span class="p">)</span>
+</code></pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ul>
+<li>
+<p>Note that in general you do not need to explicitly specify edges, as these will be
+generated automatically based on the faces specified. It's only when you want to have edges that are not connected
+to faces that you need to specify them explicitly.</p>
+</li>
+<li>
+<p>All objects in Blender (and object data of the same type, i.e. all meshes) are enforced to have unique names. When
+using the Python API this is no different. So if you create an object with <code>bpy.data.objects.new("obj", mesh)</code>
+and there already is an object named "obj" the name of the new object will be automatically set to something else. This can
+become important if you generate many objects (say in a loop) but still want to be able to refer
+to them later by name.</p>
+</li>
+</ul>
+</div>
+<h3 id="exercise-3-a-filled-disk-from-scratch">Exercise 3: a filled disk from scratch<a class="headerlink" href="#exercise-3-a-filled-disk-from-scratch" title="Permanent link">&para;</a></h3>
+<p>In the text above we created a triangle, now as an exercise let's create a spherical disk. First create a ring of vertices, then create edges and a face.</p>
+<hr />
+<h3 id="adding-vertex-colors-to-a-mesh">Adding vertex colors to a mesh<a class="headerlink" href="#adding-vertex-colors-to-a-mesh" title="Permanent link">&para;</a></h3>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/MPxLyyUQmuc" frameborder="0" allowfullscreen></iframe>
+
+<p>Vertex coloring is a way to color a mesh without using textures or uv-mapping. It works by assigning for every face that a vertex is a member of a color to that vertex. So a vertex can have different colors for each of the different faces it is in. Let's say we have a mesh, named "triangle_mesh": <code>mesh = bpy.data.meshes['triangle_mesh']</code>, the vertex colors for this mesh will be stored in <code>mesh.vertex_colors</code>. If the mesh does not have a vertex color layer yet, you can make a new one with: <code>mesh.vertex_colors.new(name='vert_colors')</code>. Now we have a color layer to work with: <code>color_layer = mesh.vertex_colors['vert_colors']</code>. </p>
+<!-- 
+| ![](images/..png) | 
+|:--:| 
+| *Figure X: Sketch of how vertex loops go over faces and such.* |
+ -->
+
+<hr />
+<h3 id="exercise-4-making-triangles-and-make-a-vertex-color-layer">Exercise 4: making triangles and make a vertex color layer<a class="headerlink" href="#exercise-4-making-triangles-and-make-a-vertex-color-layer" title="Permanent link">&para;</a></h3>
+<p>Let's take the triangle we made in section 4.1, but let's add another triangle to it, attached to the first. The code would look like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">bpy</span>
+
+<span class="c1"># Create a new mesh</span>
+<span class="n">ob_name</span> <span class="o">=</span> <span class="s2">&quot;triangle&quot;</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">meshes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">ob_name</span> <span class="o">+</span> <span class="s2">&quot;_mesh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a new object with the mesh</span>
+<span class="n">ob</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">ob_name</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
+
+<span class="c1"># Define some geometry</span>
+<span class="n">verts</span> <span class="o">=</span> <span class="p">[</span> 
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">,</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+        <span class="p">]</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[</span> 
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>  
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">]</span> <span class="c1"># These are indices pointing to elements in the list verts</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># These are indices pointing to elements in the list verts</span>
+
+<span class="c1"># Add it to the mesh</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">from_pydata</span><span class="p">(</span><span class="n">verts</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
+
+<span class="c1"># Link the object to the first collection</span>
+<span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">ob</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Now make a vertex color layer for your triangles. Then inspect how many entries are in <code>color_layer = mesh.vertex_colors['vert_colors']</code>. Why are they the same or different from the total number of vertices in the mesh?</p>
+<hr />
+<p>In exercise 4 we saw that <code>color_layer.data</code> contains six entries while we only have four vertices in the mesh. This is because a vertex has a color for every face it is in. So vertex <code>(0,2,0)</code> and <code>(0,1,2)</code> are each in two faces, while the other two vertices are only in one face. So the former vertices have two entries in the color layer, one for each face they are in, the latter only one color entry.</p>
+<p>The link between vertex indices in a mesh and those in the vertex color layer can be deduced from the polygons in <code>mesh.polygons</code>. Let's take one polygon from the triangles, lets say the first (<code>poly = mesh.polygons[0]</code>). Now, for one vertex in the polygon, <code>poly.vertices</code> gives you the index of the vertex in the mesh and <code>poly.loop_indices</code> gives you the index of the vertex in <code>color_layer.data</code>. See Fig. 3.</p>
+<p>
+<figure style="width:600px"><img src="../images/link_vertex_color_indices.png" /><figcaption>Figure 3: Sketch of the two triangles from Exercise 4. For the vertices are shown the coordinates (in black italic (x, x, x)), indices of the vertex in its mesh (green, outside of the face) and the indices in the loop_indices of the polygon (red, italic and inside the faces.</figcaption></figure>
+</p>
+<p>Once you have set colors for your vertices you need to set up the shader of the object<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. For this go to the <em>Shading</em> workspace. Create a <em>Vertex Color</em> node and connect it to a <em>Principled BSDF</em> (connect <em>Color</em> output to <em>Base Color</em> input). And then make a <em>Material Output</em> and connect the <em>Principled BSDF</em> to the <em>Surface</em> input of the <em>Material Output</em>. See Fig. 4.</p>
+<p>
+<figure><img src="../images/finding_node_type_name.png" /><figcaption>Figure 4: Shader setup for vertex colors</figcaption>
+</figure>
+</p>
+<h3 id="exercise-5-coloring-your-triangles">Exercise 5: coloring your triangles<a class="headerlink" href="#exercise-5-coloring-your-triangles" title="Permanent link">&para;</a></h3>
+<p>Let's take the two connected triangles of exercise 4. We will color them in two different ways, using vertex coloring and Python scripting.</p>
+<p>a) Make the first triangle (face (0,1,2)) green and the second (face (1,3,2)) red.</p>
+<p>b) Now color vertex (0,0,0) and (0,3,2) red and (0,2,0) and (0,1,2) green to make it look like in Fig.4.</p>
+<h3 id="adding-a-material">Adding a material<a class="headerlink" href="#adding-a-material" title="Permanent link">&para;</a></h3>
+<p>You can also add materials through the Python API. As an example to show how you could do this, let's add a material to the triangle from exercise 4 in the last section. Materials are stored in <code>bpy.data.material</code> and we can make a new material:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Make material</span>
+<span class="n">triangle_material_name</span> <span class="o">=</span> <span class="s2">&quot;triangle_mat&quot;</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">triangle_material_name</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>The nodes and the node tree are stored in the material <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span>
+</code></pre></div>
+
+
+<p>Before we start making nodes we remove the automatically generated nodes.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">nodes</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</code></pre></div>
+
+
+<p>We will make two nodes, one Principled BSDF shader and an output node. We can make the shader by making a new node.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">shader</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ShaderNodeBsdfPrincipled&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>How a node type is called you can search up in Blender in the following way. Go to the <em>Shading</em> workspace and open the <em>add</em> menu in the <em>Shader Editor</em>. Now go to <em>Shader</em> and hover over <em>Principled BSDF</em> until an information pop-up appears. In the pop-up you can find how the node type is called. See Fig. 5.</p>
+<p>
+<figure style="width:600px"><img src="../images/finding_node_type_name.png" /><figcaption>Figure 5: The type name of a node can be found by navigating to the <code>Add</code> menu and hovering over the node of your interest</figcaption></figure>
+</p>
+<p>If you also want to organize the nodes in the <em>Shader Editor</em> you can place the node like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">shader</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">300</span> <span class="c1"># Location in the node window</span>
+</code></pre></div>
+
+
+<p>We can set the inputs of the Principled BSDF shader to a default_value.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">shader</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">default_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>We can now also make an output node and place it in the <em>Shader Editor</em>.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">node_output</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ShaderNodeOutputMaterial&#39;</span><span class="p">)</span>
+<span class="n">node_output</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span>
+</code></pre></div>
+
+
+<p>Links between nodes can be made using the links in the node_tree. A new link will take outputs and inputs from the nodes you want to link.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">links</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">links</span>
+<span class="n">links</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">shader</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">node_output</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+
+
+<p>Now we only need to add the material to the mesh containing the spherical disk.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">mesh</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">mat</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<p>In summary, the total code for making the material is:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Make material</span>
+<span class="n">triangle_material_name</span> <span class="o">=</span> <span class="s2">&quot;triangle_mat&quot;</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">triangle_material_name</span><span class="p">)</span>
+
+<span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span>
+
+<span class="c1"># Clear default nodes</span>
+<span class="n">nodes</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="n">shader</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ShaderNodeBsdfPrincipled&#39;</span><span class="p">)</span>
+<span class="n">shader</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">300</span> <span class="c1"># Location in the node window</span>
+<span class="n">shader</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">default_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Create an output for the shader</span>
+<span class="n">node_output</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ShaderNodeOutputMaterial&#39;</span><span class="p">)</span>
+<span class="n">node_output</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span>
+
+<span class="n">links</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">links</span>
+<span class="n">links</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">shader</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">node_output</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">mesh</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">mat</span> <span class="p">)</span>
+</code></pre></div>
+
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Although we make minimal use of shading in this chapter, you might not be familiar with shading and materials in Blender. <a href="https://www.youtube.com/watch?v=OFmKedu8r88" target="_BLANK">Here</a> is a great introduction of how to use materials in Blender.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: June 9, 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../accessing_data/" title="Accessing Blender data" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Accessing Blender data
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../final_project/" title="Final project" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Final project
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 SURFsara
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.a45f732b.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.c03f0417.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
