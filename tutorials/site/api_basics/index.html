@@ -50,7 +50,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blender-api-basics" class="md-skip">
+        <a href="#2-blender-api-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -197,23 +197,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#21-introduction" class="md-nav__link">
+    2.1 Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-blender-from-the-command-line" class="md-nav__link">
-    Starting Blender from the command line
+  <a href="#22-starting-blender-from-the-command-line" class="md-nav__link">
+    2.2 Starting Blender from the command line
   </a>
   
-    <nav class="md-nav" aria-label="Starting Blender from the command line">
+    <nav class="md-nav" aria-label="2.2 Starting Blender from the command line">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercise-1-starting-blender-from-the-console" class="md-nav__link">
-    Exercise 1: starting Blender from the console
+  <a href="#221-exercise-1-starting-blender-from-the-console" class="md-nav__link">
+    2.2.1 Exercise 1: starting Blender from the console
   </a>
   
 </li>
@@ -224,22 +224,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-scripts-within-the-blender-interface" class="md-nav__link">
-    Run scripts within the Blender interface
+  <a href="#23-run-scripts-within-the-blender-interface" class="md-nav__link">
+    2.3 Run scripts within the Blender interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-scripts-from-the-command-line" class="md-nav__link">
-    Run scripts from the command-line
+  <a href="#24-run-scripts-from-the-command-line" class="md-nav__link">
+    2.4 Run scripts from the command-line
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#load-modules-in-blender" class="md-nav__link">
-    Load modules in Blender
+  <a href="#25-load-modules-in-blender" class="md-nav__link">
+    2.5 Load modules in Blender
   </a>
   
 </li>
@@ -329,23 +329,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#21-introduction" class="md-nav__link">
+    2.1 Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-blender-from-the-command-line" class="md-nav__link">
-    Starting Blender from the command line
+  <a href="#22-starting-blender-from-the-command-line" class="md-nav__link">
+    2.2 Starting Blender from the command line
   </a>
   
-    <nav class="md-nav" aria-label="Starting Blender from the command line">
+    <nav class="md-nav" aria-label="2.2 Starting Blender from the command line">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercise-1-starting-blender-from-the-console" class="md-nav__link">
-    Exercise 1: starting Blender from the console
+  <a href="#221-exercise-1-starting-blender-from-the-console" class="md-nav__link">
+    2.2.1 Exercise 1: starting Blender from the console
   </a>
   
 </li>
@@ -356,22 +356,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-scripts-within-the-blender-interface" class="md-nav__link">
-    Run scripts within the Blender interface
+  <a href="#23-run-scripts-within-the-blender-interface" class="md-nav__link">
+    2.3 Run scripts within the Blender interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-scripts-from-the-command-line" class="md-nav__link">
-    Run scripts from the command-line
+  <a href="#24-run-scripts-from-the-command-line" class="md-nav__link">
+    2.4 Run scripts from the command-line
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#load-modules-in-blender" class="md-nav__link">
-    Load modules in Blender
+  <a href="#25-load-modules-in-blender" class="md-nav__link">
+    2.5 Load modules in Blender
   </a>
   
 </li>
@@ -392,8 +392,8 @@
                   
                 
                 
-                <h1 id="blender-api-basics">Blender API basics<a class="headerlink" href="#blender-api-basics" title="Permanent link">&para;</a></h1>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+                <h1 id="2-blender-api-basics"><span class='enumerate-heading-plugin'>2.</span> Blender API basics<a class="headerlink" href="#2-blender-api-basics" title="Permanent link">&para;</a></h1>
+<h2 id="21-introduction"><span class='enumerate-heading-plugin'>2.1</span> Introduction<a class="headerlink" href="#21-introduction" title="Permanent link">&para;</a></h2>
 <p>Blender contains a Python interpreter that, at startup, runs scripts to construct the interface and run internal tools. 
 The user can run scripts directly on this interpreter and also access modules provided by Blender like <code>bpy</code> and <code>mathutils</code>. 
 The <code>bpy</code> module gives access to Blender's data, functions and classes. In this section we will focus on using the Python API for automation, custom data import and manipulating geometry, but this is not all that is possible with the API, of course. The <a href="https://docs.blender.org/api/current/">official API manual</a> states the following items are possible within the Python API:</p>
@@ -421,7 +421,7 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
   the last part.</li>
 </ul>
 <p>In the upcoming sections we will first look at how to run Python scripts in Blender. Then we look at how to access Blenders data through scripts and we follow this up with creating geometry, vertex colors and materials in the last section.</p>
-<h2 id="starting-blender-from-the-command-line">Starting Blender from the command line<a class="headerlink" href="#starting-blender-from-the-command-line" title="Permanent link">&para;</a></h2>
+<h2 id="22-starting-blender-from-the-command-line"><span class='enumerate-heading-plugin'>2.2</span> Starting Blender from the command line<a class="headerlink" href="#22-starting-blender-from-the-command-line" title="Permanent link">&para;</a></h2>
 <p>It is important, when scripting, to start Blender from a command line interface (macOS and Linux). Warnings, messages and <code>print()</code> statements will output into the console. How to start Blender from the command line depends on your operating system.</p>
 <ul>
 <li>For Mac it would be like this:</li>
@@ -442,9 +442,9 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 <li>In Windows you can use <em>Window =&gt; Toggle System Console</em> to open the console from the Blender interface, so you don't need to start Blender from the command line</li>
 </ul>
 <p>More information on where the Blender executable is located on your system and where Blender directories of interest are located see this manual page: https://docs.blender.org/manual/en/dev/advanced/blender_directory_layout.html</p>
-<h3 id="exercise-1-starting-blender-from-the-console">Exercise 1: starting Blender from the console<a class="headerlink" href="#exercise-1-starting-blender-from-the-console" title="Permanent link">&para;</a></h3>
+<h3 id="221-exercise-1-starting-blender-from-the-console"><span class='enumerate-heading-plugin'>2.2.1</span> Exercise 1: starting Blender from the console<a class="headerlink" href="#221-exercise-1-starting-blender-from-the-console" title="Permanent link">&para;</a></h3>
 <p>Find the Blender executable on the machine you are working on. Open Blender through the console. Delete the cube in the default project of Blender, what output is shown in the console?</p>
-<h2 id="run-scripts-within-the-blender-interface">Run scripts within the Blender interface<a class="headerlink" href="#run-scripts-within-the-blender-interface" title="Permanent link">&para;</a></h2>
+<h2 id="23-run-scripts-within-the-blender-interface"><span class='enumerate-heading-plugin'>2.3</span> Run scripts within the Blender interface<a class="headerlink" href="#23-run-scripts-within-the-blender-interface" title="Permanent link">&para;</a></h2>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/u-aQWvSVXVI" frameborder="0" allowfullscreen></iframe>
 
 <p>When scripting inside Blender it is convenient to use the <em>Scripting</em> workspace (Fig. 1: see the arrow). It gives you a <em>Python Console</em> (Fig 1: A) and a <em>Text Editor</em> (Fig 1: B). Running scripts within Blender you have a two main options:</p>
@@ -458,7 +458,7 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 <figure><img src="../images/running_python_in_blender.png" /><figcaption>Figure 1: The Scripting workspace in Blender</figcaption>
 </figure>
 </p>
-<h2 id="run-scripts-from-the-command-line">Run scripts from the command-line<a class="headerlink" href="#run-scripts-from-the-command-line" title="Permanent link">&para;</a></h2>
+<h2 id="24-run-scripts-from-the-command-line"><span class='enumerate-heading-plugin'>2.4</span> Run scripts from the command-line<a class="headerlink" href="#24-run-scripts-from-the-command-line" title="Permanent link">&para;</a></h2>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/LcaennU5BiI" frameborder="0" allowfullscreen></iframe>
 
 <p>You can also run Python scripts in Blender directly from the command-line interface. An example of executing a script (<code>-P</code>) without opening the Blender GUI (<code>-b</code>, for background) on a Mac would be:</p>
@@ -473,8 +473,10 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 
 <p>More information on command line arguments is here:
 https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html</p>
-<h2 id="load-modules-in-blender">Load modules in Blender<a class="headerlink" href="#load-modules-in-blender" title="Permanent link">&para;</a></h2>
-<p>You can add startup scripts to your Blender installation. These scripts can then be easily imported into your script. These scripts can be placd here: <code>scripts /startup/</code> in the Blender directory (for example on a Mac: <code>/Applications/Blender.app/Contents/Resources/2.81/scripts /startup/</code>). </p>
+<h2 id="25-load-modules-in-blender"><span class='enumerate-heading-plugin'>2.5</span> Load modules in Blender<a class="headerlink" href="#25-load-modules-in-blender" title="Permanent link">&para;</a></h2>
+<p>You can add startup scripts to your Blender installation. These scripts can then be easily imported into your script. These scripts can be placd here: <code>scripts
+/startup/</code> in the Blender directory (for example on a Mac: <code>/Applications/Blender.app/Contents/Resources/2.81/scripts
+/startup/</code>). </p>
 <p>For scripts you want to import for just one project or Blender file you can use
 the normal Python method of editing <code>sys.path</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>

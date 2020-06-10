@@ -50,7 +50,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accessing-blender-data" class="md-skip">
+        <a href="#3-accessing-blender-data" class="md-skip">
           Skip to content
         </a>
       
@@ -209,22 +209,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-bpydata" class="md-nav__link">
-    Using bpy.data
+  <a href="#31-using-bpydata" class="md-nav__link">
+    3.1 Using bpy.data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#some-notes-on-bpycontext-and-bpyops" class="md-nav__link">
-    Some notes on bpy.context and bpy.ops
+  <a href="#32-some-notes-on-bpycontext-and-bpyops" class="md-nav__link">
+    3.2 Some notes on bpy.context and bpy.ops
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-2-running-a-script-and-rendering-from-the-console" class="md-nav__link">
-    Exercise 2: running a script and rendering from the console
+  <a href="#33-exercise-2-running-a-script-and-rendering-from-the-console" class="md-nav__link">
+    3.3 Exercise 2: running a script and rendering from the console
   </a>
   
 </li>
@@ -302,22 +302,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-bpydata" class="md-nav__link">
-    Using bpy.data
+  <a href="#31-using-bpydata" class="md-nav__link">
+    3.1 Using bpy.data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#some-notes-on-bpycontext-and-bpyops" class="md-nav__link">
-    Some notes on bpy.context and bpy.ops
+  <a href="#32-some-notes-on-bpycontext-and-bpyops" class="md-nav__link">
+    3.2 Some notes on bpy.context and bpy.ops
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-2-running-a-script-and-rendering-from-the-console" class="md-nav__link">
-    Exercise 2: running a script and rendering from the console
+  <a href="#33-exercise-2-running-a-script-and-rendering-from-the-console" class="md-nav__link">
+    3.3 Exercise 2: running a script and rendering from the console
   </a>
   
 </li>
@@ -338,8 +338,8 @@
                   
                 
                 
-                <h1 id="accessing-blender-data">Accessing Blender data<a class="headerlink" href="#accessing-blender-data" title="Permanent link">&para;</a></h1>
-<h2 id="using-bpydata">Using <code>bpy.data</code><a class="headerlink" href="#using-bpydata" title="Permanent link">&para;</a></h2>
+                <h1 id="3-accessing-blender-data"><span class='enumerate-heading-plugin'>3.</span> Accessing Blender data<a class="headerlink" href="#3-accessing-blender-data" title="Permanent link">&para;</a></h1>
+<h2 id="31-using-bpydata"><span class='enumerate-heading-plugin'>3.1</span> Using <code>bpy.data</code><a class="headerlink" href="#31-using-bpydata" title="Permanent link">&para;</a></h2>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/dObIxpVbZ7k" frameborder="0" allowfullscreen></iframe>
 
 <p>All data in a Blender file can be accessed through <code>bpy.data</code>. This contains for example all objects (<code>bpy.data.objects</code>), all meshes (<code>bpy.data.meshes</code>), all scenes (<code>bpy.data.scenes</code>) and all materials (<code>bpy.data.materials</code>). 
@@ -369,13 +369,13 @@ For example. <code>bpy.data.objects["Cube"]</code> and <code>bpy.data.objects[1]
 <figure><img src="../images/editors_info-editor_info-editor.png" /><figcaption>Figure 2: The Info Editor is a nice way to see what python commands are executed when you use Blender. In this figure we see that we deleted the initial cube, made a UV Sphere and translated it.</figcaption>
 </figure>
 </p>
-<h2 id="some-notes-on-bpycontext-and-bpyops">Some notes on <code>bpy.context</code> and <code>bpy.ops</code><a class="headerlink" href="#some-notes-on-bpycontext-and-bpyops" title="Permanent link">&para;</a></h2>
+<h2 id="32-some-notes-on-bpycontext-and-bpyops"><span class='enumerate-heading-plugin'>3.2</span> Some notes on <code>bpy.context</code> and <code>bpy.ops</code><a class="headerlink" href="#32-some-notes-on-bpycontext-and-bpyops" title="Permanent link">&para;</a></h2>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/w9t_675NV_8" frameborder="0" allowfullscreen></iframe>
 
 <p>In this section we want to briefly introduce how you can access the so-called context and use operators in the Blender Python API. <code>bpy.context</code> stores information about a user's selections and the context Blender is in. For example, if you want to check which mode is currently active in Blender you can check the value of <code>bpy.context.mode</code>. </p>
 <p>Now if you want to change the mode, you can use an operator. Operators are tools that are usually accessed through the user interface with buttons and menus. You can access these operators with Python through <code>bpy.ops</code>. If we would like to change the mode we can do this using an operator, e.g. <code>bpy.ops.object.mode_set(mode='OBJECT')</code></p>
 <p>Of course switching to, say, edit mode, depends on which object are selected, which can be checked with <code>bpy.context.selected_objects</code>. But keep in mind that many of the variables in the context are read-only, altering <code>bpy.context.selected_objects</code> directly is not possible. Instead, you can select an object with the <code>select_set()</code> method of the object, e.g. <code>bpy.data.objects['Cube'].select_set(True)</code>.  </p>
-<h2 id="exercise-2-running-a-script-and-rendering-from-the-console">Exercise 2: running a script and rendering from the console<a class="headerlink" href="#exercise-2-running-a-script-and-rendering-from-the-console" title="Permanent link">&para;</a></h2>
+<h2 id="33-exercise-2-running-a-script-and-rendering-from-the-console"><span class='enumerate-heading-plugin'>3.3</span> Exercise 2: running a script and rendering from the console<a class="headerlink" href="#33-exercise-2-running-a-script-and-rendering-from-the-console" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Write an external script that removes the Cube object that is part of the default scene <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </li>
 <li>Then, from the command line and without opening the Blender GUI execute this script and render the first frame. Let it output a PNG image file in the directory of the blender file. </li>
