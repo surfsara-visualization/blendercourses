@@ -515,7 +515,7 @@ to them later by name.</p>
 <p>In exercise 4 we saw that <code>color_layer.data</code> contains six entries while we only have four vertices in the mesh. This is because a vertex has a color for every face it is in. So vertex <code>(0,2,0)</code> and <code>(0,1,2)</code> are each in two faces, while the other two vertices are only in one face. So the former vertices have two entries in the color layer, one for each face they are in, the latter only one color entry.</p>
 <p>The link between vertex indices in a mesh and those in the vertex color layer can be deduced from the polygons in <code>mesh.polygons</code>. Let's take one polygon from the triangles, lets say the first (<code>poly = mesh.polygons[0]</code>). Now, for one vertex in the polygon, <code>poly.vertices</code> gives you the index of the vertex in the mesh and <code>poly.loop_indices</code> gives you the index of the vertex in <code>color_layer.data</code>. See Fig. 3.</p>
 <p>
-<figure style="width:600px"><img src="../images/link_vertex_color_indices.png" /><figcaption>Figure 3: Sketch of the two triangles from Exercise 4. For the vertices are shown the coordinates (in black italic (x, x, x)), indices of the vertex in its mesh (green, outside of the face) and the indices in the loop_indices of the polygon (red, italic and inside the faces.</figcaption></figure>
+<figure style="width:600px"><img src="../images/link_vertex_color_indices.png" /><figcaption>Figure 3: Sketch of the two triangles from Exercise 4. For the vertices are shown the coordinates (in black italic (x, x, x)), indices of the vertex in its mesh (green, outside of the face) and the indices in the loop_indices of the polygon (red, italic and inside the faces.)</figcaption></figure>
 </p>
 <p>Once you have set colors for your vertices you need to set up the shader of the object<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. For this go to the <em>Shading</em> workspace. Create a <em>Vertex Color</em> node and connect it to a <em>Principled BSDF</em> (connect <em>Color</em> output to <em>Base Color</em> input). And then make a <em>Material Output</em> and connect the <em>Principled BSDF</em> to the <em>Surface</em> input of the <em>Material Output</em>. See Fig. 4.</p>
 <p>
@@ -525,7 +525,7 @@ to them later by name.</p>
 <h2 id="45-exercise-5-coloring-your-triangles"><span class='enumerate-heading-plugin'>4.5</span> Exercise 5: coloring your triangles<a class="headerlink" href="#45-exercise-5-coloring-your-triangles" title="Permanent link">&para;</a></h2>
 <p>Let's take the two connected triangles of exercise 4. We will color them in two different ways, using vertex coloring and Python scripting.</p>
 <p>a) Make the first triangle (face (0,1,2)) green and the second (face (1,3,2)) red.</p>
-<p>b) Now color vertex (0,0,0) and (0,3,2) red and (0,2,0) and (0,1,2) green to make it look like in Fig.4.</p>
+<p>b) Now color vertex (0,0,0) and (0,3,2) red and (0,2,0) and (0,1,2) green.</p>
 <h2 id="46-adding-a-material"><span class='enumerate-heading-plugin'>4.6</span> Adding a material<a class="headerlink" href="#46-adding-a-material" title="Permanent link">&para;</a></h2>
 <p>You can also add materials through the Python API. As an example to show how you could do this, let's add a material to the triangle from exercise 4 in the last section. Materials are stored in <code>bpy.data.material</code> and we can make a new material:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Make material</span>

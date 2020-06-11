@@ -426,8 +426,7 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 <ul>
 <li>For Mac it would be like this:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="c1"># First, open a terminal window</span>
-/Applications/Blender.app/Contents/MacOS/Blender
+<div class="codehilite"><pre><span></span><code>/Applications/Blender.app/Contents/MacOS/Blender
 </code></pre></div>
 
 
@@ -441,9 +440,9 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 <ul>
 <li>In Windows you can use <em>Window =&gt; Toggle System Console</em> to open the console from the Blender interface, so you don't need to start Blender from the command line</li>
 </ul>
-<p>More information on where the Blender executable is located on your system and where Blender directories of interest are located see this manual page: https://docs.blender.org/manual/en/dev/advanced/blender_directory_layout.html</p>
+<p>More information on where the Blender executable is located on your system and where Blender directories of interest are located see this <a href="https://docs.blender.org/manual/en/dev/advanced/blender_directory_layout.html" target="_BLANK">manual page</a>.</p>
 <h3 id="221-exercise-1-starting-blender-from-the-console"><span class='enumerate-heading-plugin'>2.2.1</span> Exercise 1: starting Blender from the console<a class="headerlink" href="#221-exercise-1-starting-blender-from-the-console" title="Permanent link">&para;</a></h3>
-<p>Find the Blender executable on the machine you are working on. Open Blender through the console. Delete the cube in the default project of Blender, what output is shown in the console?</p>
+<p>Find the Blender executable on your machine. Open Blender through the console. Delete the cube in the default project of Blender, what output is shown in the console?</p>
 <h2 id="23-run-scripts-within-the-blender-interface"><span class='enumerate-heading-plugin'>2.3</span> Run scripts within the Blender interface<a class="headerlink" href="#23-run-scripts-within-the-blender-interface" title="Permanent link">&para;</a></h2>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/u-aQWvSVXVI" frameborder="0" allowfullscreen></iframe>
 
@@ -466,13 +465,12 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 </code></pre></div>
 
 
-<p>Or if you want to render the first frame (<code>-f 1</code>) from the test.blend file. The output will go to the directory of the blender file (<code>-o //...</code>) and it will generate a PNG image file (<code>-F PNG</code>).</p>
+<p>Or if you want to render the first frame (<code>-f 1</code>) from an example test.blend file. The output will go to the directory of the blender file (<code>-o //...</code>) and it will generate a PNG image file (<code>-F PNG</code>).</p>
 <div class="codehilite"><pre><span></span><code>blender -b test.blend -o //render_ -F PNG -f <span class="m">1</span>
 </code></pre></div>
 
 
-<p>More information on command line arguments is here:
-https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html</p>
+<p>More information on command line arguments is <a href="https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html" target="_BLANK">here</a>.</p>
 <h2 id="25-load-modules-in-blender"><span class='enumerate-heading-plugin'>2.5</span> Load modules in Blender<a class="headerlink" href="#25-load-modules-in-blender" title="Permanent link">&para;</a></h2>
 <p>You can add startup scripts to your Blender installation. These scripts can then be easily imported into your script. These scripts can be placd here: <code>scripts
 /startup/</code> in the Blender directory (for example on a Mac: <code>/Applications/Blender.app/Contents/Resources/2.81/scripts
