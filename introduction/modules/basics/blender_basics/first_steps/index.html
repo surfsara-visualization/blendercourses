@@ -1,0 +1,1252 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://surfsara-visualization.github.io/blendercourses/introduction/modules/basics/blender_basics/first_steps/">
+      
+      <link rel="shortcut icon" href="../../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+    
+    
+      
+        <title>First steps in the user interface - Introduction to Scientific Visualization with Blender</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.77f3fd56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#first-steps-in-the-user-interface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://surfsara-visualization.github.io/blendercourses/introduction" title="Introduction to Scientific Visualization with Blender" class="md-header__button md-logo" aria-label="Introduction to Scientific Visualization with Blender">
+      
+  <img src="../../../../images/surf-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction to Scientific Visualization with Blender
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              First steps in the user interface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../overview/introduction/" class="md-tabs__link">
+        Course overview
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link md-tabs__link--active">
+        Blender basics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../importing_data/introduction/" class="md-tabs__link">
+        Importing data
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../simple_mesh_editing/introduction/" class="md-tabs__link">
+        Simple mesh editing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rendering_lighting_materials/introduction/" class="md-tabs__link">
+        Rendering, lighting & materials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../animation/introduction/" class="md-tabs__link">
+        Animation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../references/interface/" class="md-tabs__link">
+        References
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://surfsara-visualization.github.io/blendercourses/introduction" title="Introduction to Scientific Visualization with Blender" class="md-nav__button md-logo" aria-label="Introduction to Scientific Visualization with Blender">
+      
+  <img src="../../../../images/surf-logo.svg" alt="logo">
+
+    </a>
+    Introduction to Scientific Visualization with Blender
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Course overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Course overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Course overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/setup/" class="md-nav__link">
+        Course setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/schedule/" class="md-nav__link">
+        Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/conventions/" class="md-nav__link">
+        Text conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Blender basics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blender basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Blender basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          First steps in the user interface
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        First steps in the user interface
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-blender" class="md-nav__link">
+    Starting Blender
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-to-default-settings" class="md-nav__link">
+    Changes to default settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-gpu-based-rendering-in-cycles" class="md-nav__link">
+    Enabling GPU-based rendering in Cycles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-thing-called-eevee" class="md-nav__link">
+    A thing called EEVEE?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_assignment_interaction_selections/" class="md-nav__link">
+        (EXERCISE) Interaction, selections, outliner
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformations/" class="md-nav__link">
+        Transformations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects_3d_cursor_undo/" class="md-nav__link">
+        Objects, 3D cursor, Undo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_assignment_transformations/" class="md-nav__link">
+        (EXERCISE) Transformations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cameras_and_views/" class="md-nav__link">
+        Cameras and views
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_assignment_camera_and_views/" class="md-nav__link">
+        (EXERCISE) Cameras and views
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/" class="md-nav__link">
+        User interface configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_hierarchy/" class="md-nav__link">
+        Scene hierarchy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Importing data
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Importing data" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Importing data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../importing_data/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../importing_data/exercise_vertex_colors/" class="md-nav__link">
+        (EXERCISE) Vertex colors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../importing_data/exercise_your_data/" class="md-nav__link">
+        (EXERCISE) Your own data
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Simple mesh editing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Simple mesh editing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Simple mesh editing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simple_mesh_editing/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simple_mesh_editing/sme_assignment/" class="md-nav__link">
+        (EXERCISE) Simple mesh editing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Rendering, lighting & materials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Rendering, lighting & materials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Rendering, lighting & materials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering_lighting_materials/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering_lighting_materials/rlm_assignment/" class="md-nav__link">
+        (EXERCISE) Rendering, lighting and materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Animation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Animation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Animation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/exercise_manual_camera_orbit/" class="md-nav__link">
+        (EXERCISE) Orbiting an object manually
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/exercise_parented_camera_orbit/" class="md-nav__link">
+        (EXERCISE) Camera orbiting using parenting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/exercise_track_to/" class="md-nav__link">
+        (EXERCISE) Track To constraint
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/everything/" class="md-nav__link">
+        Keyframing everything
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/tradeoffs_settings_output/" class="md-nav__link">
+        Tradeoffs, settings and output
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/example_flipbook_animation/" class="md-nav__link">
+        (EXAMPLE) Flipbook animation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        References
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/interface/" class="md-nav__link">
+        User Interface elements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/cheat_sheet/" class="md-nav__link">
+        Cheat sheet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/official/" class="md-nav__link">
+        Official sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/community/" class="md-nav__link">
+        Community resources
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-blender" class="md-nav__link">
+    Starting Blender
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-to-default-settings" class="md-nav__link">
+    Changes to default settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-gpu-based-rendering-in-cycles" class="md-nav__link">
+    Enabling GPU-based rendering in Cycles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-thing-called-eevee" class="md-nav__link">
+    A thing called EEVEE?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="first-steps-in-the-user-interface">First steps in the user interface<a class="headerlink" href="#first-steps-in-the-user-interface" title="Permanent link">&para;</a></h1>
+<h2 id="starting-blender">Starting Blender<a class="headerlink" href="#starting-blender" title="Permanent link">&para;</a></h2>
+<p>In general Blender isn't different to start than any other GUI application. </p>
+<p>However, warning and error messages will be printed to the console window. It depends 
+on the operating system you're working on how the console window is available:</p>
+<ul>
+<li>
+<p>(All operating systems) If you start Blender from a terminal window, e.g. xterm or Windows Command window, then
+Blender output will be printed in that window</p>
+</li>
+<li>
+<p>(Windows only) If Blender was started from the Start menu then you can toggle the associated
+console window using the <strong><code>Window &gt; Toggle System Console</code></strong> option</p>
+</li>
+</ul>
+<p>See <a href="https://docs.blender.org/manual/en/latest/advanced/command_line/launch/index.html">this section</a>
+in the Blender manual for more details on starting Blender from the command line
+and details specific for each operating system.</p>
+<h2 id="fundamentals">Fundamentals<a class="headerlink" href="#fundamentals" title="Permanent link">&para;</a></h2>
+<p>We will go over fundamentals of the user interface in terms of interaction and areas, specifically
+the 3D view and Outliner. We also touch on a number of often-performed operations, such as rendering an image
+and changing the set of selected objects. We also look a bit closer into keyboard shortcuts and menus.</p>
+<p>It's probably best to follow along in Blender on your own system while viewing the video. The files
+used in the video can be found under <strong><code>data/blender_basics</code></strong>.</p>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/689HOvvktRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If the interaction in the 3D view isn't smooth on your PC/laptop something might be wrong in the setup of your system. 
+Please contact us if this appears to be the case.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If the 3D view (or some of the other areas) suddenly appear to behave strangely, or you now
+see your mesh with all kinds of dots or lines then you might have accidentally entered the so-called
+"Edit Mode" or any of the other modes available. Check the menu in the upper left of the 3D view, which
+should read <strong><code>Object Mode</code></strong>:</p>
+<p><img alt="" src="../../../../images/object-mode.png" /></p>
+<p>In this course we will only Object Mode (and briefly use Vertex Paint mode
+in one of the exercises). You can use the drop-down menu shown above (or the <strong><code>Ctrl-Tab</code></strong> menu in the 3D view) and 
+pick <strong><code>Object Mode</code></strong> to get back to the correct mode.   </p>
+</div>
+<p>Summary of 3D view navigation (see also the <a href="/references/cheat_sheet">cheat sheet</a> under Navigation):</p>
+<ul>
+<li><strong><code>MMB</code></strong> = rotate view</li>
+<li><strong><code>Scrollwheel</code></strong> or <strong><code>Ctrl+MMB</code></strong> = zoom view</li>
+<li><strong><code>Shift+MMB</code></strong> = translate view</li>
+</ul>
+<h2 id="changes-to-default-settings">Changes to default settings<a class="headerlink" href="#changes-to-default-settings" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It's not required to change these defaults, but we find they help in working with Blender</p>
+</div>
+<p>Under <strong><code>Edit &gt; Preferences</code></strong>, then in <strong><code>Interface</code></strong> tab:</p>
+<ul>
+<li>Under <strong><code>Display</code></strong> disable <strong><code>Splash Screen</code></strong> </li>
+<li>Under <strong><code>Editors &gt; Temporary Editors</code></strong> set <strong><code>Render In</code></strong> to <strong><code>Image Editor</code></strong>. This will cause the rendered image to be displayed as a replacement of the 3D view, instead of in a separate window. After rendering press <strong><code>Escape</code></strong> to get back the 3D view.</li>
+<li>Under <strong><code>Editors &gt; Status Bar</code></strong> enable <strong><code>Scene Statistics</code></strong>, <strong><code>System Memory</code></strong> and <strong><code>Video Memory</code></strong>. This will show extra scene statistics in the status bar.</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Another option which you might consider enabling is <strong><code>Orbit Around Selection</code></strong>. By default this is turned <strong>off</strong> and in that mode any rotation of the 3D viewport 
+will be around the center of the view, which might cause selected objects to go out of view. When the option is turned <strong>on</strong> viewport rotation will be around the selected object(s), always keeping them in view. You can find this option on the <strong><code>Navigation</code></strong> tab under <strong><code>Orbit &amp; Pan</code></strong>.</p>
+</div>
+<h2 id="enabling-gpu-based-rendering-in-cycles">Enabling GPU-based rendering in Cycles<a class="headerlink" href="#enabling-gpu-based-rendering-in-cycles" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GPU rendering in Blender is only supported on Windows and Linux; macOS is currently not supported.</p>
+</div>
+<p>In general GPU-based rendering is a lot faster than rendering on a multi-core CPU. However, only by 
+making a comparison on your particular system can really find out if GPU rendering is a good option for you.
+Apart from performance there are some other aspects to consider with GPU rendering:</p>
+<ul>
+<li>When doing a GPU render your desktop environment might become less responsive</li>
+<li>A GPU usually has less memory available, which might cause problems with really large scenes</li>
+</ul>
+<p>In case you want to try enabling GPU rendering go to the Preferences window (<strong><code>Edit &gt; Preferences</code></strong>) and
+then the <strong><code>System</code></strong> tab. The settings available under <strong><code>Cycles Render Device</code></strong> are
+somewhat dependent on the hardware in your system but should look a little like this:</p>
+<p><img alt="" src="../cycles-gpu-settings.png" /></p>
+<p>By default <strong><code>None</code></strong> will be active, meaning no GPU acceleration is used for rendering
+and it all happens on the CPU.</p>
+<p>In general, on a PC/Laptop with an NVIDIA GPU the <strong><code>CUDA</code></strong> option is to be preferred, although <strong><code>OptiX</code></strong> might work well as an alternative 
+(but will only be available on newer GPUs).</p>
+<p>On a system with an AMD or Intel GPU you can only choose <strong><code>OpenCL</code></strong>.</p>
+<p>For more detail you can consult the relevant <a href="https://docs.blender.org/manual/en/latest/render/cycles/gpu_rendering.html">section</a>
+in the Blender documentation.</p>
+<h2 id="a-thing-called-eevee">A thing called EEVEE?<a class="headerlink" href="#a-thing-called-eevee" title="Permanent link">&para;</a></h2>
+<p>When consulting other Blender materials, specifically on rendering, you may
+see references to EEVEE. This is another render engine available in Blender,
+which is different from the Cycles engine we will be using in this course. </p>
+<p>Even though EEVEE is meant for fast and highly interactive rendering work, even more so than the Cycles preview render 
+we showed so far, we do not use EEVEE in this course. The reasons for this are:</p>
+<ul>
+<li>We personally find Cycles to be more intuitive to work with and explain, as it is built 
+around the path tracing algorithm, which is easy to understand. EEVEE's rendering setup is somewhat more complex, as it uses a combination of different techniques.</li>
+<li>Cycles can render both on CPU and GPU, whereas EEVEE can only render on a GPU (more specifically, it needs OpenGL)</li>
+<li>Cycles is more feature-complete, whereas EEVEE has some <a href="https://docs.blender.org/manual/en/latest/render/eevee/limitations.html">limitations</a> compared to Cycles</li>
+<li>EEVEE doesn't (easily) support headless rendering, i.e. starting a Blender render from the command-line without showing the user interface,
+which is especially relevant when rendering long animations on an HPC system</li>
+<li>Although Cycles and EEVEE are getting closer in features with every Blender release they are still not fully equivalent. 
+This would mean having to dedicate extra course material on these differences</li>
+</ul>
+<p>If you do like more information on EEVEE then please check <a href="https://docs.blender.org/manual/en/latest/render/eevee/introduction.html">this section</a>
+in the Blender manual.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: March 22, 2021 18:31:07
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../introduction/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../1_assignment_interaction_selections/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              (EXERCISE) Interaction, selections, outliner
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018-2021 SURF
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs!
+        </a>
+        
+      </div>
+        <a href="https://www.surf.nl"><img style="height:48px" src=../../../../images/surf-logo.svg></a>
+        <a href="https://prace-ri.eu/"><img style="height:48px" src=../../../../images/prace-logo.png></a>                            
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/SURF_onderzoek" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      
+    
+  </body>
+</html>
