@@ -951,30 +951,36 @@
                 
                 
                 <h1 id="example-flipbook-animation">(EXAMPLE) Flipbook animation<a class="headerlink" href="#example-flipbook-animation" title="Permanent link">&para;</a></h1>
+<p>Here are the steps needed to import a set of animated meshes
+and make them play as an animation within Blender. The approach
+we use here is to have a single mesh object on which we change
+the associated mesh data each frame. So even though all timesteps
+are loaded only one of them is visible at a time. </p>
+<p>Here we take advantage of the Blender scene organization, where each object (a mesh object in
+this case) refers to object data (one of the meshes in the animation).
+We use a small Python script, called a <em>frame handler</em>, to respond
+to a change of the current frame time.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This example is not correctly working yet in Blender 2.92 and is still
-being updated.</p>
+<p>The method below will import all meshes in the animation into the current
+scene. This uses quite a bit of memory (around 1GB in our tests).</p>
 </div>
-<p>Here are the steps needed to import a set of animated meshes
-and make them play within Blender.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The data for this example is part of our advanced course and
-so tou can find the data on <a href="https://edu.nl/hrvbe">https://edu.nl/hrvbe</a>
+you can find the data on <a href="https://edu.nl/hrvbe">https://edu.nl/hrvbe</a>
 under <strong><code>data/animation</code></strong>.</p>
 <p>The <strong><code>animated_ply_imports.blend</code></strong> scene file contains two Python scripts,
 in the Text Editor called <strong><code>1. import ply files</code></strong> and <strong><code>2. register anim handler</code></strong>.</p>
 <p>The <strong><code>dambreak.tar.gz</code></strong> file contains a set of animated meshes in binary
-PLY format and so is quite large.</p>
+PLY format and so is quite large when extracted.</p>
 </div>
-<p>Here you can get familiar with the flipbook approach we showed:</p>
 <ol>
 <li>Extract <strong><code>dambreak.tar.gz</code></strong> in the same directory as <strong><code>animated_ply_imports.blend</code></strong>. 
 This will create a directory <strong><code>dambreak</code></strong> which contains the PLY files.</li>
 <li>Load <strong><code>animated_ply_imports.blend</code></strong></li>
 </ol>
-<p>As noted above, this blend file not only contains a 3D scene, but also some Python
+<p>As noted above, this blend file not only contains a 3D scene, but also two Python
 scripts we use to set up the flipbook animation.</p>
 <p>The first step is to load all the timesteps in the dataset using one
 of the scripts. This might take a bit of time, depending on the speed
@@ -984,33 +990,45 @@ in both the import script and the animation handler script.</p>
 <ol start="3">
 <li>
 <p>Execute the script that imports the time step meshes from the PLY files. To do
-   this step make sure the script called "1. import ply files" is shown
+   this step make sure the script called <strong><code>1. import ply files</code></strong> is selected
    in the text editor panel. Then press the play button to the right of it,
    which will execute the script (an alternative is press <strong><code>Alt-P</code></strong> in the editor).</p>
 </li>
 <li>
-<p>The cursor changes to a numbered black square indicating the
-   percentage of loading that has been completed.
+<p>The cursor will change to an animated circle, indicating the
+   import is running. 
    In case you get the idea something is wrong check the console
-   output in the terminal where you started Blender.
-   XXX progress indicator is broken with 2.92</p>
+   output in the terminal where you started Blender.   </p>
 </li>
 <li>
 <p>After all PLY files are loaded execute the script that installs the
-   frame change handler. This script is called "2. register anim handler".
-   Make sure the text editor is switched to this script press the play button.</p>
+   frame change handler. This script is called <strong><code>2. register anim handler</code></strong>.
+   Make sure the text editor is switched to this script, then press the play button.</p>
 </li>
 <li>
 <p>Verify that the flipbook animation works with <strong><code>Space</code></strong> and/or
-   moving the time slider in the Timeline with <strong><code>Shift-RMB</code></strong>.</p>
+   moving the time slider in the Timeline with <strong><code>Shift-RMB</code></strong>. You should see
+   the fluid simulation evolve with each frame. You can also check the
+   object data associated with the <strong><code>Fluid sim</code></strong> object in the Outliner
+   to see that it changes.</p>
 </li>
 </ol>
 <p>The playback speed will depend on your system's performance, but
-also on the framerate setting.</p>
+also on the framerate setting chosen.</p>
 <ol start="7">
-<li>Change the <strong><code>Frame Rate</code></strong> value (in the <strong><code>Output</code></strong> properties tab
+<li>
+<p>Change the <strong><code>Frame Rate</code></strong> value (in the <strong><code>Output</code></strong> properties tab
    at the right side of the screen, icon <img alt="" src="../../images/outputicon.png" />) to different values to see how your system handles it.
-   Is 60 fps feasible?</li>
+   Is 60 fps feasible?</p>
+</li>
+<li>
+<p>The <strong><code>Fluid sim</code></strong> object is still transformable as any normal object.
+   Experiment with this, to see how it influences the flipbook animation.</p>
+</li>
+<li>
+<p>If you like, you can add a Camera to the scene and make it follow the
+wave of fluid in a nice way and then render this into animation.</p>
+</li>
 </ol>
                 
                   
@@ -1020,7 +1038,7 @@ also on the framerate setting.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: March 24, 2021 12:36:58
+      Last update: March 24, 2021 13:49:26
     
   </small>
 </div>
