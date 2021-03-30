@@ -1097,6 +1097,13 @@ example by linking to another Blender file. Also, the materials provided by Blen
 shader graphs, involving multiple layers of textures, or advanced node setups.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
+<p>When applying a BlenderKit material on your own object the rendering might not
+look like the material preview in all cases. Especially use of displaced materials
+involves specific settings for the Cycles renderer and use of subdivision on the
+object.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Textures from BlenderKit are by default stored in a separate directory on your system
 (<code>~/blenderkit_data</code> on Linux). There is an option to <em>pack</em> the textures within the
 Blender file, making it larger in size but also completely independent of any external
@@ -1111,7 +1118,7 @@ The option for packing files is <strong><code>File &gt; External Data &gt; Pack 
 <div class="md-source-date">
   <small>
     
-      Last update: March 30, 2021 10:25:53
+      Last update: March 30, 2021 10:46:56
     
   </small>
 </div>
