@@ -189,8 +189,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../mesh_editing/introduction/" class="md-tabs__link">
-        Mesh edit mode
+      <a href="../../advanced_materials/introduction/" class="md-tabs__link">
+        Node-based materials
       </a>
     </li>
   
@@ -205,8 +205,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../advanced_materials/introduction/" class="md-tabs__link">
-        Node-based materials
+      <a href="../../mesh_editing/introduction/" class="md-tabs__link">
+        Mesh edit mode
       </a>
     </li>
   
@@ -623,6 +623,19 @@
     Object transformations
   </a>
   
+    <nav class="md-nav" aria-label="Object transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometry-coordinates" class="md-nav__link">
+    Geometry coordinates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -837,13 +850,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
-        Mesh edit mode
+        Node-based materials
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Mesh edit mode" data-md-level="1">
+      <nav class="md-nav" aria-label="Node-based materials" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Mesh edit mode
+          Node-based materials
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -852,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mesh_editing/introduction/" class="md-nav__link">
+      <a href="../../advanced_materials/introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -864,8 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mesh_editing/mesh_editing_assignment/" class="md-nav__link">
-        (EXERCISE) Advanced Mesh Editing
+      <a href="../../advanced_materials/advanced_materials_assignment/" class="md-nav__link">
+        Advanced materials
       </a>
     </li>
   
@@ -891,13 +904,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
-        Node-based materials
+        Mesh edit mode
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Node-based materials" data-md-level="1">
+      <nav class="md-nav" aria-label="Mesh edit mode" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Node-based materials
+          Mesh edit mode
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -906,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced_materials/introduction/" class="md-nav__link">
+      <a href="../../mesh_editing/introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -918,8 +931,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced_materials/advanced_materials_assignment/" class="md-nav__link">
-        Advanced materials
+      <a href="../../mesh_editing/mesh_editing_assignment/" class="md-nav__link">
+        (EXERCISE) Advanced Mesh Editing
       </a>
     </li>
   
@@ -1235,6 +1248,19 @@
     Object transformations
   </a>
   
+    <nav class="md-nav" aria-label="Object transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometry-coordinates" class="md-nav__link">
+    Geometry coordinates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1497,7 +1523,7 @@
 </code></pre></div>
 <p>This usually isn't an issue, but just something to be aware of when working with referencing objects by name, as that name might have become something different than you expect.</p>
 <h2 id="objects-and-object-data">Objects and object data<a class="headerlink" href="#objects-and-object-data" title="Permanent link">&para;</a></h2>
-<p>When we use the word Object in these pages we mean one of the object types that can be present in a 3D scene, e.g. camera, mesh, light, etc. Such objects are of type <code>bpy.types.Object</code> and all have general properties related to their presence in the 3D scene. For example, their 3D transformation, visibility flags, name, etc.</p>
+<p>When we use the word Object in these pages we mean one of the object types that can be present in a 3D scene, e.g. camera, mesh, light, etc. Such objects are of type <code>bpy.types.Object</code> and all have general properties related to their presence in the 3D scene. For example, their name, 3D transformation, visibility flags, parent, etc.</p>
 <p>But a Light object needs to specify different properties than, say, a Camera object and these per-type properties are stored as <em>object data</em>. The object data can be accessed through the <code>data</code> attribute of an Object:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Both lights and cameras are Objects</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Light&#39;</span><span class="p">])</span>
@@ -1789,6 +1815,30 @@
         <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)))</span>
 </code></pre></div>
 <p>See <a href="#parenting">the section on parenting</a> below for some subtle effects on transformations in cases object parenting is used.</p>
+<h3 id="geometry-coordinates">Geometry coordinates<a class="headerlink" href="#geometry-coordinates" title="Permanent link">&para;</a></h3>
+<p>Mesh geometry in Blender stores vertex coordinates (and other geometric information) in object-space coordinates. But a mesh (or object in general) will usually get transformed to a specific position, scaling and orientation in the scene. As described above the net transform from object-space to world-space coordinates, also called the object-to-world transform, is available through <code>matrix_world</code>. In cases where you need to have access to geometric data <em>in world-space</em>, say vertex coordinates, you need to apply the <code>matrix_world</code> transform manually. </p>
+<p>For example, given the cube transformed as shown above, with vertex 7 selected (visible bottom-left in the image below):</p>
+<p><img alt="" src="../../images/global_vertex_coordinate.png" style="width:60%" /></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">o</span>
+<span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Cube&#39;</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">data</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">o</span><span class="o">.</span><span class="n">matrix_world</span>
+<span class="n">Matrix</span><span class="p">(((</span><span class="mf">1.3376139402389526</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3065159320831299</span><span class="p">),</span>
+        <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.3376139402389526</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.2441697120666504</span><span class="p">),</span>
+        <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.3376139402389526</span><span class="p">,</span> <span class="mf">1.2577730417251587</span><span class="p">),</span>
+        <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)))</span>
+
+<span class="c1"># The object-space coordinate of this vertex</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">co</span>
+<span class="n">Vector</span><span class="p">((</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+
+<span class="c1"># The world-space coordinate of this vertex, which matches</span>
+<span class="c1"># what the Transform UI shows. Note the Global display mode</span>
+<span class="c1"># select in the UI, if we select Local if will show (-1, -1, -1).</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">o</span><span class="o">.</span><span class="n">matrix_world</span> <span class="o">@</span> <span class="n">m</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">co</span>
+<span class="n">Vector</span><span class="p">((</span><span class="o">-</span><span class="mf">1.0310980081558228</span><span class="p">,</span> <span class="mf">0.9065557718276978</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07984089851379395</span><span class="p">))</span>
+</code></pre></div>
 <h2 id="api-quirks">API quirks<a class="headerlink" href="#api-quirks" title="Permanent link">&para;</a></h2>
 <p>Working with the Blender Python API has some peculiarities compared to your average Python scripting. These have to do with the way the API is structured, but also how it interacts with the Blender internals. The API manual contains a lengthy <a href="https://docs.blender.org/api/current/info_gotcha.html">page</a> on some gotchas, but here we list some of the common ones.</p>
 <h3 id="object-modes">Object modes<a class="headerlink" href="#object-modes" title="Permanent link">&para;</a></h3>
@@ -2672,17 +2722,25 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
 <p>Blender uses a system based on reference-counting to decide when data-blocks have become unused and can get purged. In the short video below we show some of the details of this scheme:</p>
 <iframe width="800" height="450" src="https://www.youtube.com/embed/3y2652P42Wg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>Although the video only focused on materials the way data-block lifetime is managed using the user counts is general to <em>all types of data-blocks</em> in Blender.</p>
-<p>The video shows the <code>Orphan Data</code> outliner mode, but there are other <a href="https://docs.blender.org/manual/en/latest/editors/outliner/interface.html#display-mode">modes</a> that can be used to get detailed insight into the current state of Blender internals:</p>
+<p>The video shows the <code>Orphan Data</code> outliner mode, but there are several <a href="https://docs.blender.org/manual/en/latest/editors/outliner/interface.html#display-mode">modes</a> that can be used to get detailed insight into the current state of Blender internals:</p>
 <ul>
 <li>
 <p>The <strong><code>Blender File</code></strong> mode gives a high-level overview of a file's contents, including some of the more implicit data block types, such as Workspaces.</p>
 </li>
 <li>
-<p>The <strong><code>Data API</code></strong> mode provides an even more detailed view. It is actually a great way to inspect all the gory details of a Blender file. It will show all data blocks by type and their attributes. Some attributes can be even be edited in this mode.</p>
+<p>The <strong><code>Data API</code></strong> mode provides an even more detailed view. It is actually a great way to inspect all the gory details of Blender's internal data structures. It will show all data-blocks by type and their attributes. Some attributes can be even be edited in this outliner mode.</p>
 </li>
 <li>
 <p>The <strong><code>Orphan Data</code></strong> mode shows data blocks that do not have any users and which will not be saved (unless they are marked to have a fake user). Some of the data-blocks you see here might not have been created by you, but are used by Blender internally, for example the Brushes.</p>
+</li>
+</ul>
+<p>Although the video only focused on materials, the way data-block lifetime is managed using the user counts is general to <em>all types of data-blocks</em> in Blender. But there are subtle differences in whether a data-block is really deleted or just has a link to it removed:</p>
+<ul>
+<li>
+<p>Whenever the term "unlink" is used it means that a link to that data-block is removed and its user count decreased, but the data-block itself will still be in memory. An example of this is clicking the X next to a mesh's material in the Material Properties.</p>
+</li>
+<li>
+<p>If the UI uses the term "delete" it means the data-block is deleted immediately from memory. Any data-blocks linked from the deleted data-block will have their users count decreased. An example of this is deleting a Camera object in the 3D view: the Camera object's data-block is deleted from memory, but the Camera <em>object data</em> data-block (containing the actual camera settings) is still in memory, which you can check in the Orphan Data mode of the outliner.</p>
 </li>
 </ul>
 <p>The usage count of data-blocks can also be queried from Python:</p>
@@ -2726,7 +2784,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
 <p>The <code>use_fake_user</code> attribute of a data block controls whether a Fake user is set, similar to the checkbox in the UI.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>In most cases you probably don't want to manually delete data blocks from a file and only use the normal UI operations. But it is possible for cases that need it. Truly purging a data block from Python can be done with the relevant <code>remove()</code> method, e.g. </p>
+<p>In most cases you probably don't want to manually delete data blocks from a file and only use the normal UI operations for that. But it is possible for cases that need it. Truly purging a data block from Python can be done with the relevant <code>remove()</code> method, e.g. </p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 <span class="p">[</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Cube&#39;</span><span class="p">]]</span>
 
@@ -2747,7 +2805,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
 <span class="p">[]</span>
 </code></pre></div>
 <p>Note that in the case of deleting object data (in this case a Mesh) any Objects referencing that object data <a href="https://docs.blender.org/manual/en/latest/files/data_blocks.html#removing-data-blocks">also get removed</a>!</p>
-<p>A second thing to note is the above code does not actually update the current Blender file on disk. That only happens on an explicit save action (e.g. through the <strong><code>File</code></strong> menu). </p>
+<p>A second thing to note is the above code does not actually update the current Blender file on disk. That only happens on an explicit save action (e.g. through the <strong><code>File</code></strong> menu or using the relevant operator from Python). </p>
 </div>
 <h3 id="a-note-on-bpydata-bpydataobjects">A note on <code>bpy.data</code>, <code>bpy.data.objects</code>, ...<a class="headerlink" href="#a-note-on-bpydata-bpydataobjects" title="Permanent link">&para;</a></h3>
 <p>We have been using <code>bpy.data.objects</code> in most examples above to access objects in the scene. This is actually not completely clean, as <code>bpy.data.objects</code> holds all objects in the <em>Blender file</em>. Usually, the distinction doesn't matter as you only have one scene, but a Blender file can hold multiple scenes, each with their own set of objects:</p>
@@ -2905,7 +2963,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
 <div class="md-source-date">
   <small>
     
-      Last update: May 21, 2021 11:23:17
+      Last update: May 23, 2021 12:40:08
     
   </small>
 </div>
@@ -2942,7 +3000,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
         </a>
       
       
-        <a href="../../mesh_editing/introduction/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../advanced_materials/introduction/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
