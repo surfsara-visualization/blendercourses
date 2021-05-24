@@ -205,6 +205,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../animation/introduction/" class="md-tabs__link">
+        Animation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../mesh_editing/introduction/" class="md-tabs__link">
         Mesh edit mode
       </a>
@@ -605,11 +621,89 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
+        Animation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Animation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Animation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/2_assignment_cars/" class="md-nav__link">
+        (EXERCISE) "Cars": the movie
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/3_assignment_flipbook/" class="md-nav__link">
+        (EXERCISE) Flipbook animation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/shape_keys/" class="md-nav__link">
+        Shape keys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
         Mesh edit mode
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Mesh edit mode" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Mesh edit mode
         </label>
@@ -656,14 +750,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_5">
+      <label class="md-nav__link" for="__nav_6">
         Final project
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Final project" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Final project
         </label>
@@ -675,7 +769,7 @@
   
     <li class="md-nav__item">
       <a href="../../final_project/final_project/" class="md-nav__link">
-        Final project: making a visualisation of your own data
+        Final project: making a visualization of your own data
       </a>
     </li>
   
@@ -698,14 +792,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
-      <label class="md-nav__link" for="__nav_6">
+      <label class="md-nav__link" for="__nav_7">
         References
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="References" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -924,7 +1018,7 @@ The <code>bpy</code> module gives access to Blender's data, functions and classe
 <li>Use the built-in <em>Text Editor</em> (Fig. 1: B)</li>
 </ul>
 <p>The <em>Python Console</em> is nice for exploring the API using auto-complete (<strong>TAB</strong> in 2.82+, <strong>Ctrl-Space</strong> in older versions) to see what is available. The keyboard shortcuts are a bit different than you might be used to in other text editors. See <a href="https://docs.blender.org/manual/en/latest/editors/python_console.html?highlight=python%20console#interface">this section</a> in the Blender manual for an overview of menu options and shortcut keys.</p>
-<p>Blender also has its own built-in editor which you can use (Fig. 1: B) and directly execute the script by pressing <code>Run Script</code> at the top right XXX is now a "play arrow". If you want to use your own editor to edit your scripts you can do this by opening the script in both the Blender <em>Text Editor</em> and your own editor. To refresh the Blender <em>Text Editor</em> use <code>Text &gt; Reload</code> or <code>Alt R</code> (or <code>Option R</code> on the Mac). You can also make a script that you open in the Blender <em>Text Editor</em> that executes an external script you edit in your own editor. See for example the script in Fig. 1: B.</p>
+<p>Blender also has its own built-in editor which you can use (Fig. 1: B) and directly execute the script by pressing the <img alt="" src="../../images/run_script_button.png" /> button in the top bar. If you want to use your own editor to edit your scripts you can do this by opening the script in both the Blender <em>Text Editor</em> and your own editor. To refresh the Blender <em>Text Editor</em> use <code>Text &gt; Reload</code> or <code>Alt R</code> (or <code>Option R</code> on the Mac). You can also make a script that you open in the Blender <em>Text Editor</em> that executes an external script you edit in your own editor. See for example the script in Fig. 1: B.</p>
 <p>
 <figure><img src="../images/running_python_in_blender.png" /><figcaption>Figure 1: The Scripting workspace in Blender</figcaption>
 </figure>
@@ -960,7 +1054,7 @@ module, so <code>import numpy</code> should work out of the box</p>
 <div class="md-source-date">
   <small>
     
-      Last update: May 24, 2021 10:10:55
+      Last update: May 24, 2021 17:26:30
     
   </small>
 </div>
