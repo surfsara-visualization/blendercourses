@@ -16,7 +16,7 @@
     
     
       
-        <title>Visualising volumetric data with Python and Blender - Advanced Topics in Scientific Visualization with Blender</title>
+        <title>Visualizing volumetric data - Advanced Topics in Scientific Visualization with Blender</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#visualising-volumetric-data-with-python-and-blender" class="md-skip">
+        <a href="#visualizing-volumetric-data" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualising volumetric data with Python and Blender
+              Visualizing volumetric data
             
           </span>
         </div>
@@ -442,12 +442,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Visualising volumetric data with Python and Blender
+          Visualizing volumetric data
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Visualising volumetric data with Python and Blender
+        Visualizing volumetric data
       </a>
       
         
@@ -462,6 +462,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#installation-of-pyopenvdb" class="md-nav__link">
@@ -486,7 +493,7 @@
       
         <li class="md-nav__item">
   <a href="#exercise-coloring-the-cube" class="md-nav__link">
-    Exercise: coloring the cube
+    (EXERCISE) Coloring the cube
   </a>
   
 </li>
@@ -782,6 +789,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation-of-pyopenvdb" class="md-nav__link">
     Installation of pyopenvdb
   </a>
@@ -804,7 +818,7 @@
       
         <li class="md-nav__item">
   <a href="#exercise-coloring-the-cube" class="md-nav__link">
-    Exercise: coloring the cube
+    (EXERCISE) Coloring the cube
   </a>
   
 </li>
@@ -822,14 +836,8 @@
               
                 
                 
-                <h1 id="visualising-volumetric-data-with-python-and-blender">Visualising volumetric data with Python and Blender<a class="headerlink" href="#visualising-volumetric-data-with-python-and-blender" title="Permanent link">&para;</a></h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x0Zlb7vyaO4" frameborder="0" allowfullscreen></iframe>
-
-<p>In this section we will show a simple example of how to visualize custom volumetric data with Blender and Python. First we will create data in Python and write it to a VDB file using <a href="https://www.openvdb.org/">openVDB</a> and the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. The openVDB website describes openVDB as:</p>
-<blockquote>
-<p>OpenVDB is an Academy Award-winning C++ library comprising a hierarchical data structure and a suite of tools for the efficient manipulation of sparse, time-varying, volumetric data discretized on three-dimensional grids. It is based on VDB, which was developed by Ken Museth at DreamWorks Animation, and it offers an effectively infinite 3D index space, compact storage, fast data access, and a collection of algorithms specifically optimized for the data structure for common tasks such as filtering, CSG, compositing, numerical simulation, sampling, and voxelization from other geometric representations.</p>
-</blockquote>
-<p>For more documentation on openVDB see <a href="https://academysoftwarefoundation.github.io/openvdb/">here</a>. </p>
+                <h1 id="visualizing-volumetric-data">Visualizing volumetric data<a class="headerlink" href="#visualizing-volumetric-data" title="Permanent link">&para;</a></h1>
+<p>In this section we will show a simple example of how to visualize custom volumetric data with Blender and Python. The current support in Blender for volumetric data is directly tied to the <em>OpenVDB</em> file format. In fact, the only way to create a volume object is to load an OpenVDB file. This is a file format and data structure that originated from the motion-picture industry, where it is often used to show clouds, smoke and fire in computer graphics like movies and games. Here's an example of such a volumetric rendering:</p>
 <table>
 <thead>
 <tr>
@@ -842,9 +850,22 @@
 </tr>
 </tbody>
 </table>
-<p>OpenVDB is often used to show smoke and fire in computer graphics like movies and games. OpenVDB models are mostly generated with specialized software like <a href="https://www.sidefx.com/">Houdini</a> and <a href="https://jangafx.com/software/embergen/">Embergen</a>. Volumetric data in general is also used for scientific visualizations, for example in <a href="https://www.paraview.org/">ParaView</a>. In this section we will explain how VDB files can be made from scratch. For example for when you have you own volumetric data in your own data format and you want to visualize or animate this in Blender. To convert your data to a VDB format we will use the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. </p>
+<p>The reason OpenVDB is used for many uses of volumetric data in computer graphics is that is allows sparse volumes to be stored efficiently, while also providing easy querying of the data, for example during rendering. OpenVDB is also a bit more than just a file format, as the OpenVDB library also supports more advanced operations. From the OpenVDB website:</p>
+<blockquote>
+<p>OpenVDB is an Academy Award-winning C++ library comprising a hierarchical data structure and a suite of tools for the efficient manipulation of sparse, time-varying, volumetric data discretized on three-dimensional grids. It is based on VDB, which was developed by Ken Museth at DreamWorks Animation, and it offers an effectively infinite 3D index space, compact storage, fast data access, and a collection of algorithms specifically optimized for the data structure for common tasks such as filtering, CSG, compositing, numerical simulation, sampling, and voxelization from other geometric representations.</p>
+</blockquote>
+<p>For more documentation on OpenVDB see <a href="https://academysoftwarefoundation.github.io/openvdb/">here</a>. Some example OpenVDB files can be found <a href="https://www.openvdb.org/download/">here</a>, under Sample Models.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>OpenVDB models are mostly generated with specialized software like <a href="https://www.sidefx.com/">Houdini</a> and <a href="https://jangafx.com/software/embergen/">Embergen</a>. Volumetric data in general is also used for scientific visualizations, for example in <a href="https://www.paraview.org/">ParaView</a>, but support for OpenVDB is still lacking somewhat. In this section we will explain how OpenVDB files can be made from scratch. For example for when you have you own volumetric data in your own data format and you want to visualize or animate this in Blender. To convert your data to a OpenVDB format we will use the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. </p>
+<p>First we will create data in Python and write it to a OpenVDB file using <a href="https://www.openvdb.org/">OpenVDB</a> and the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x0Zlb7vyaO4" frameborder="0" allowfullscreen></iframe>
+
 <h2 id="installation-of-pyopenvdb">Installation of <code>pyopenvdb</code><a class="headerlink" href="#installation-of-pyopenvdb" title="Permanent link">&para;</a></h2>
-<p>Installing the Python module to access the openVDB functionality can be very easy or more difficult depending on your operating system. See the installation instructions on the <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb website</code></a>. If you cannot get it to work that way, I made a simple Docker container you can use to run it, see <a href="https://github.com/surfsara-visualization/pyopenvdb-docker-image">here</a> for the github repository.</p>
+<p>Installing the Python module to access the openVDB functionality can be very easy or more difficult depending on your operating system. See the installation instructions on the <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb website</code></a>. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you cannot get it to work that way, we made a simple Docker container you can use to run it, see <a href="https://github.com/surfsara-visualization/pyopenvdb-docker-image">here</a> for the github repository.</p>
+</div>
 <h2 id="making-a-vdb-file-with-pyopenvdb">Making a VDB file with pyopenvdb<a class="headerlink" href="#making-a-vdb-file-with-pyopenvdb" title="Permanent link">&para;</a></h2>
 <p>Let us make a simple volumetric cube using <code>pyopenvdb</code>. To start we first load pyopenvdb and numpy:
 <div class="highlight"><pre><span></span><code>import numpy as np
@@ -892,7 +913,7 @@ The last thing left to do is to save the grid to file:
 </table>
 <p>Change to the <code>Shading</code> workspace (see Fig. 1, #2) and in the <code>Shader editor</code> click on new to make a new material (see Fig. 1, #3). You see Blender makes a <code>Principled volume</code> and <code>Material output</code> node. To make the cube appear we need to change one thing and for this we need to know the name of the grid in the VDB file. </p>
 <p>From the Python script we know this is <code>cube</code>, but you can also figure out the grids and their names in a VDB file from within Blender. In the <code>Properties</code> panel go to <code>Object Data Properties</code> tab (see Fig. 1, #4). Here under <code>Grids</code> you can see the names of the grids in the VDB file. For now, in the <code>Principled Volume</code> node, add the name of the grid (<code>cube</code>) into the field next to <code>Density Attribute</code> (see Fig. 1, #5). This tells the node to use the values in the grid for the scattering density of the voxels.</p>
-<h2 id="exercise-coloring-the-cube">Exercise: coloring the cube<a class="headerlink" href="#exercise-coloring-the-cube" title="Permanent link">&para;</a></h2>
+<h2 id="exercise-coloring-the-cube">(EXERCISE) Coloring the cube<a class="headerlink" href="#exercise-coloring-the-cube" title="Permanent link">&para;</a></h2>
 <p>Now make a cube similar to the one we just made, but color it blue on one side and red on the other (See Fig. 2). First alter the Python script to include a second grid in the VDB file. In this second grid set one side of the cube to value 1 and the other to zero. Use an <code>Attribute node</code> (do not forget to add the grid name to the <code>Name:</code> field in the attribute node) to feed the second grid into a <code>ColorRamp</code> node (and choose the colors you want). Now feed the <code>ColorRamp</code> into the <code>Color</code> field of the <code>Principled Volume</code>. Do not forget to set the original grid in the <code>Density Attribute</code>. </p>
 <p>Does it come out right? Maybe you need to play a bit with settings, like set the <code>Density</code> to 1. You might also need to play with the lighting. If you still have the original light in your scene, try increasing its <code>Power</code> and location. Now also see how it looks in <code>Cycles</code> compared to <code>Eevee</code>.</p>
 <table>
@@ -915,7 +936,7 @@ The last thing left to do is to save the grid to file:
 <div class="md-source-date">
   <small>
     
-      Last update: May 19, 2021 12:22:51
+      Last update: May 24, 2021 10:10:55
     
   </small>
 </div>

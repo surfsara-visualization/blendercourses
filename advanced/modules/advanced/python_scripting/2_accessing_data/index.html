@@ -455,7 +455,7 @@
       
         <li class="md-nav__item">
   <a href="#exercise-2-running-a-script-and-rendering-from-the-console" class="md-nav__link">
-    Exercise 2: running a script and rendering from the console
+    (EXERCISE 2) Running a script and rendering from the console
   </a>
   
 </li>
@@ -486,7 +486,7 @@
   
     <li class="md-nav__item">
       <a href="../4_volumetric_data/" class="md-nav__link">
-        Visualising volumetric data with Python and Blender
+        Visualizing volumetric data
       </a>
     </li>
   
@@ -790,7 +790,7 @@
       
         <li class="md-nav__item">
   <a href="#exercise-2-running-a-script-and-rendering-from-the-console" class="md-nav__link">
-    Exercise 2: running a script and rendering from the console
+    (EXERCISE 2) Running a script and rendering from the console
   </a>
   
 </li>
@@ -841,7 +841,7 @@ Two examples of changing attributes (note that some operations only work if Blen
 <p>In this section we want to briefly introduce how you can access the so-called context and use operators in the Blender Python API. <code>bpy.context</code> stores information about a user's selections and the context Blender is in. For example, if you want to check which mode is currently active in Blender you can check the value of <code>bpy.context.mode</code>. </p>
 <p>Now if you want to change the mode, you can use an operator. Operators are tools that are usually accessed through the user interface with buttons and menus. You can access these operators with Python through <code>bpy.ops</code>. If we would like to change the mode we can do this using an operator, e.g. <code>bpy.ops.object.mode_set(mode='OBJECT')</code></p>
 <p>Of course switching to, say, edit mode, depends on which objects are selected, which can be checked with <code>bpy.context.selected_objects</code>. But keep in mind that many of the variables in the context are read-only, altering <code>bpy.context.selected_objects</code> directly is not possible. Instead, you can select an object with the <code>select_set()</code> method of the object, e.g. <code>bpy.data.objects['Cube'].select_set(True)</code>.  </p>
-<h2 id="exercise-2-running-a-script-and-rendering-from-the-console">Exercise 2: running a script and rendering from the console<a class="headerlink" href="#exercise-2-running-a-script-and-rendering-from-the-console" title="Permanent link">&para;</a></h2>
+<h2 id="exercise-2-running-a-script-and-rendering-from-the-console">(EXERCISE 2) Running a script and rendering from the console<a class="headerlink" href="#exercise-2-running-a-script-and-rendering-from-the-console" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Write an external script that removes the Cube object that is part of the default scene <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </li>
 <li>Then, from the command line and without opening the Blender GUI execute this script and render the first frame. Let it output a PNG image file in the directory of the blender file. </li>
@@ -864,7 +864,7 @@ Two examples of changing attributes (note that some operations only work if Blen
 <div class="md-source-date">
   <small>
     
-      Last update: May 12, 2021 14:23:50
+      Last update: May 24, 2021 10:10:55
     
   </small>
 </div>

@@ -434,7 +434,7 @@
   
     <li class="md-nav__item">
       <a href="../4_volumetric_data/" class="md-nav__link">
-        Visualising volumetric data with Python and Blender
+        Visualizing volumetric data
       </a>
     </li>
   
@@ -1463,16 +1463,20 @@
                 <h1 id="the-blender-api-in-detail">The Blender API in detail<a class="headerlink" href="#the-blender-api-in-detail" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The Blender Python API mostly consists of a thin layer on top of the underlying Blender C/C++ data structures and methods. The underlying C/C++ code is used to automatically generate the Python API during the build process of the Blender executable, which means the API is always up-to-date with respect to the underlying code. </p>
-<p>The API isn't the only part of Blender that uses Python. Large parts of the user interface, the import/export scripts and all addons are written in Python. It is therefore relatively easy to extent Blender with, say, new UI dialogs or an importer. This is one of the strengths of the Blender Python API.</p>
+<p>The API isn't the only part of Blender that uses Python. Large parts of the user interface, the import/export scripts and all addons are written in Python. It is therefore relatively easy to extend Blender with, say, new UI dialogs or an importer. This is one of the strengths of the Blender Python API.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Since the API provides access to Blender internals at a very low level you can screw up the Blender state quite easily, causing unexpected behaviour, data corruption or even crashes. In the worst case you can end up with a file that will no longer load in Blender at all, although that's rare.</p>
-<p>So when working with Python scripting save your scene file often, preferably in a number of incremental versions.</p>
-<p>In cases where you suspect Blender internal state has been corrupted you can save the current file, restart Blender and then reopen the file to help ensure you start from a known-good state.</p>
+<p>So when working with Python scripting save your session to file often, preferably in a number of incremental versions.</p>
+<p>In cases where you suspect Blender's internal state has been corrupted you can save the current file, restart Blender and then reopen the file to help ensure you start from a known-good state.</p>
 </div>
 <h3 id="api-modules">API modules<a class="headerlink" href="#api-modules" title="Permanent link">&para;</a></h3>
 <p>The Blender Python API is comprised of several modules, with <code>bpy</code> being the main one. But there's also useful routines in <code>mathutils</code>, <code>bmesh</code> and a few others.</p>
-<p><em>By default none of these modules (not even <code>bpy</code>) is loaded for scripts in the text editor, so you need to import the ones you need explicitly.</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The API documentation on these modules can be easily accessed from within Blender using <strong><code>Help &gt; Python API Reference</code></strong>.</p>
+</div>
+<p><em>By default none of the API modules, not even <code>bpy</code>, is loaded in the environment where a script file runs, so you need to import the ones you need explicitly.</em></p>
 <p>The Python Console <em>does</em> import quite a few things by defaults and also sets some useful variables, like <code>C</code> to access <code>bpy.context</code> and <code>D</code> to access <code>bpy.data</code> with less typing:</p>
 <div class="highlight"><pre><span></span><code><span class="n">PYTHON</span> <span class="n">INTERACTIVE</span> <span class="n">CONSOLE</span> <span class="mf">3.9</span><span class="o">.</span><span class="mi">4</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">20</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">15</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">38</span><span class="p">)</span>  <span class="p">[</span><span class="n">GCC</span> <span class="mf">10.2</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span>
 
@@ -1484,7 +1488,6 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 <span class="p">[</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Camera&#39;</span><span class="p">],</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Cube&#39;</span><span class="p">],</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Light&#39;</span><span class="p">]]</span>
 </code></pre></div>
-<p>The API documentation on these modules can be easily accessed from within Blender using <strong><code>Help &gt; Python API Reference</code></strong>.</p>
 <h3 id="developer-settings">Developer settings<a class="headerlink" href="#developer-settings" title="Permanent link">&para;</a></h3>
 <p>When developing Python scripts in Blender it can be useful to enable a few extra settings:</p>
 <ul>
@@ -1521,7 +1524,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">meshes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;my object&#39;</span><span class="p">)</span>
 <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">meshes</span><span class="p">[</span><span class="s1">&#39;my object.002&#39;</span><span class="p">]</span>
 </code></pre></div>
-<p>This usually isn't an issue, but just something to be aware of when working with referencing objects by name, as that name might have become something different than you expect.</p>
+<p>This usually isn't an issue, but just something to be aware of when working with referencing objects by name, as the name of a data-block you created might actually be something different than you expect.</p>
 <h2 id="objects-and-object-data">Objects and object data<a class="headerlink" href="#objects-and-object-data" title="Permanent link">&para;</a></h2>
 <p>When we use the word Object in these pages we mean one of the object types that can be present in a 3D scene, e.g. camera, mesh, light, etc. Such objects are of type <code>bpy.types.Object</code> and all have general properties related to their presence in the 3D scene. For example, their name, 3D transformation, visibility flags, parent, etc.</p>
 <p>But a Light object needs to specify different properties than, say, a Camera object and these per-type properties are stored as <em>object data</em>. The object data can be accessed through the <code>data</code> attribute of an Object:</p>
@@ -1580,7 +1583,7 @@
 <span class="p">[(</span><span class="s1">&#39;Camera&#39;</span><span class="p">,</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Camera&#39;</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;Cube&#39;</span><span class="p">,</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Cube&#39;</span><span class="p">]),</span> 
 <span class="p">(</span><span class="s1">&#39;Light&#39;</span><span class="p">,</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Light&#39;</span><span class="p">])]</span>
 </code></pre></div>
-<p>Note that the position of an item in the collection, and hence it's index, can change during a Blender session.</p>
+<p>Note that the position of an item in the collection, and hence its index, can change during a Blender session.</p>
 <h3 id="inspecting-values">Inspecting values<a class="headerlink" href="#inspecting-values" title="Permanent link">&para;</a></h3>
 <p>One of the more annoying aspects when working in the Blender Python Console inspecting these kinds of values is that the elements in a <code>bpy_prop_collection</code> (or other Blender types) aren't printed by default, this in contrast to a regular Python dictionary. You need to, for example, cast to a list or call its <code>values()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Regular Python dict, prints both keys and values</span>
@@ -1608,7 +1611,7 @@
 <span class="p">[</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Camera&#39;</span><span class="p">],</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Cube&#39;</span><span class="p">],</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Light&#39;</span><span class="p">]]</span>
 <span class="c1"># Returns collection *values*</span>
 </code></pre></div>
-<p>The choice for not printing the values inside a <code>bpy_prop_collection</code> is (probably) that in many cases the collection will contain large numbers of objects, so printing them all would not be too useful, or might even make the UI non-responsive for a short time.</p>
+<p>The choice for not printing the values inside a <code>bpy_prop_collection</code> is (most likely) that in many cases the collection will contain large numbers of objects, so printing them all would not be too useful, or might even make the UI non-responsive for a short time.</p>
 <h3 id="data-organization">Data organization<a class="headerlink" href="#data-organization" title="Permanent link">&para;</a></h3>
 <p>In certain cases Blender uses a more elaborate data structure in cases where you might except low-level values, like lists. For example, the set of vertices that make up a mesh are only accessible as a collection of <code>MeshVertex</code> objects:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">m</span>
@@ -1640,7 +1643,7 @@
 </code></pre></div>
 <p>The reason for this is that there's several types of data associated with a single vertex, which are all centralized in a <code>MeshVertex</code> object. In short, Blender uses a so-called array-of-structs design. The alternative design choice would have been to have separate arrays for vertex coordinates, vertex normals, etc (which would be a struct-of-arrays design).</p>
 <h3 id="vertices-and-matrices">Vertices and matrices<a class="headerlink" href="#vertices-and-matrices" title="Permanent link">&para;</a></h3>
-<p>The example above also shows that even a vertex coordinate is not represented by a low-level Python data type, like a tuple, but by the <code>Vector</code> type. This has the advantage of providing many useful methods for operating on vector values:</p>
+<p>The example above also shows that even a vertex coordinate is not accessed as a low-level Python data type, like a tuple, but by the <code>Vector</code> type (which is in the <code>mathutils</code> module). This has the advantage of providing many useful methods for operating on vector values:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">normal</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">v</span>
 <span class="n">Vector</span><span class="p">((</span><span class="mf">0.5773491859436035</span><span class="p">,</span> <span class="mf">0.5773491859436035</span><span class="p">,</span> <span class="mf">0.5773491859436035</span><span class="p">))</span>
@@ -2963,7 +2966,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
 <div class="md-source-date">
   <small>
     
-      Last update: May 23, 2021 12:40:08
+      Last update: May 24, 2021 09:45:41
     
   </small>
 </div>
@@ -2994,7 +2997,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
               <span class="md-footer__direction">
                 Previous
               </span>
-              Visualising volumetric data with Python and Blender
+              Visualizing volumetric data
             </div>
           </div>
         </a>
