@@ -16,7 +16,7 @@
     
     
       
-        <title>(EXERCISE) Advanced Mesh Editing - Advanced Topics in Scientific Visualization with Blender</title>
+        <title>(EXERCISE) Mesh Editing with the Edit mode - Advanced Topics in Scientific Visualization with Blender</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-advanced-mesh-editing" class="md-skip">
+        <a href="#exercise-mesh-editing-with-the-edit-mode" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              (EXERCISE) Advanced Mesh Editing
+              (EXERCISE) Mesh Editing with the Edit mode
             
           </span>
         </div>
@@ -514,7 +514,7 @@
   
     <li class="md-nav__item">
       <a href="../../advanced_materials/advanced_materials_assignment/" class="md-nav__link">
-        Advanced materials
+        (EXERCISE) The Shader Editor and advanced material topics
       </a>
     </li>
   
@@ -680,12 +680,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          (EXERCISE) Advanced Mesh Editing
+          (EXERCISE) Mesh Editing with the Edit mode
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        (EXERCISE) Advanced Mesh Editing
+        (EXERCISE) Mesh Editing with the Edit mode
       </a>
       
         
@@ -717,7 +717,7 @@
       
         <li class="md-nav__item">
   <a href="#separating-skin-from-bones" class="md-nav__link">
-    Separating skin from bones)
+    Separating skin from bones
   </a>
   
 </li>
@@ -915,7 +915,7 @@
       
         <li class="md-nav__item">
   <a href="#separating-skin-from-bones" class="md-nav__link">
-    Separating skin from bones)
+    Separating skin from bones
   </a>
   
 </li>
@@ -940,7 +940,7 @@
               
                 
                 
-                <h1 id="exercise-advanced-mesh-editing">(EXERCISE) Advanced Mesh Editing<a class="headerlink" href="#exercise-advanced-mesh-editing" title="Permanent link">&para;</a></h1>
+                <h1 id="exercise-mesh-editing-with-the-edit-mode">(EXERCISE) Mesh Editing with the Edit mode<a class="headerlink" href="#exercise-mesh-editing-with-the-edit-mode" title="Permanent link">&para;</a></h1>
 <p>This assignment will be a brief introduction on the <em>Edit mode</em> in the <em>3D viewport</em>.</p>
 <p>Once you opened the exercise blend file <strong><code>sme_assignment.blend</code></strong> you'll see the familiar fish iso-surface above a plane.</p>
 <h2 id="getting-familiar-with-the-edit-mode">Getting familiar with the Edit mode<a class="headerlink" href="#getting-familiar-with-the-edit-mode" title="Permanent link">&para;</a></h2>
@@ -950,7 +950,7 @@
 </ol>
 <p>Now you will be able to see all the vertices, edges and faces that make up the 3D model. You will now try to select and move around some vertices, edges and/or faces.</p>
 <ol start="2">
-<li>Change the <em>Mesh Select Mode</em> to <strong><code>Vertex</code></strong> by pressing <strong><code>1</code></strong> (or click the left icon in <img alt="" src="../../images/editmodeselect.png" /> at the 3D view header).</li>
+<li>Change the <em>Mesh Select Mode</em> to <strong><code>Vertex</code></strong> by pressing <strong><code>1</code></strong> (or click the left icon in <img alt="" src="../../images/editmodeselect.png" style="height:30px;" /> at the 3D view header).</li>
 <li>Before you start selecting, de-select all all current selected vertices by pressing <strong><code>Alt-A</code></strong> or double <strong>'A'</strong> rapidly.</li>
 <li>Now try to select a single vertex by clicking on it with the <strong><code>LMB</code></strong>, or multiple with <strong><code>Shift-LMB</code></strong>. You might have to zoom in a bit to separate the vertices enough.</li>
 <li>Another method is to use the selection tools:<ol>
@@ -973,14 +973,14 @@
 <li>Repeat step 2 to 4 for the other 2 holes.</li>
 </ol>
 <p><strong>Tip!</strong>: The fill with <strong><code>f</code></strong> fills the hole with an n-gon, a face with more then 4 vertices. These can sometimes create shading artifacts in your final render. Another way to fill these holes is to use grid-fill (<strong><code>ctrl+f</code></strong>), this tries to fill the whole with a grid of quad shaped faces. This however might not always work for numerous reasons (uneven amount of vertices, closed loops etc) which can be fixed with additional mesh editing but the easy route would be to fill it with an n-gon face.</p>
-<h2 id="separating-skin-from-bones">Separating skin from bones)<a class="headerlink" href="#separating-skin-from-bones" title="Permanent link">&para;</a></h2>
+<h2 id="separating-skin-from-bones">Separating skin from bones<a class="headerlink" href="#separating-skin-from-bones" title="Permanent link">&para;</a></h2>
 <p>Now that you got a little familiar with mesh editing you can try to separate the skin from the bones by using mesh separation.</p>
 <ol>
 <li>While still in edit mode (press <strong><code>Tab</code></strong> if not), try to select all the outside skin with the <em>select linked</em> selection by hovering the mouse cursor over the geometry and pressing <strong><code>L</code></strong>. This will only select a connected part of the skin so continue this step until you think you selected all the outside skin. Note that it is difficult to do this perfectly, as some of the insides of the fish are sometimes also selectable.
 Unfortunately, this occurs frequently with this type of sensor-based 3D data.</li>
 <li>Once you think all the skin is selected you can press <strong><code>P</code></strong> and select <strong><code>Selection</code></strong> to separate the selected surfaces from the main mesh into another mesh object. This new mesh will be added to the <em>Outliner</em> with the name <strong><code>fish.001</code></strong>.</li>
 <li>In the <em>Outliner</em> double-click <strong><code>LMB</code></strong> on the mesh object <strong><code>fish.001</code></strong> to rename it to <strong><code>fishskin</code></strong>. Do the same for the <strong><code>fish</code></strong> mesh object and rename it to <strong><code>fishbones</code></strong>.</li>
-<li>If you now select the <strong><code>fishskin</code></strong> mesh object and hide it by clicking the little <img alt="" src="../../images/outlinereyeicon.png" /> icon in the <em>Outliner</em> will reveal the insides of the fish.</li>
+<li>If you now select the <strong><code>fishskin</code></strong> mesh object and hide it by clicking the little <img alt="" src="../../images/outlinereyeicon.png" style="height:30px;width:30px" /> icon in the <em>Outliner</em> will reveal the insides of the fish.</li>
 </ol>
 <p><strong>Tips!</strong>:
   - To reverse the separation of the mesh into bone and skin you can select both the mesh objects in <em>Object mode</em> and press <strong><code>Ctrl-J</code></strong> to join them back together into a single mesh.
@@ -1009,7 +1009,7 @@ Unfortunately, this occurs frequently with this type of sensor-based 3D data.</l
 <div class="md-source-date">
   <small>
     
-      Last update: May 23, 2021 12:40:08
+      Last update: May 24, 2021 22:03:29
     
   </small>
 </div>

@@ -514,7 +514,7 @@
   
     <li class="md-nav__item">
       <a href="../../advanced_materials/advanced_materials_assignment/" class="md-nav__link">
-        Advanced materials
+        (EXERCISE) The Shader Editor and advanced material topics
       </a>
     </li>
   
@@ -717,7 +717,7 @@
   
     <li class="md-nav__item">
       <a href="../../mesh_editing/mesh_editing_assignment/" class="md-nav__link">
-        (EXERCISE) Advanced Mesh Editing
+        (EXERCISE) Mesh Editing with the Edit mode
       </a>
     </li>
   
@@ -914,7 +914,7 @@
                 
                 <h1 id="shape-keys">Shape keys<a class="headerlink" href="#shape-keys" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><em>Shape keys</em> can be used for a very specific type of animation: to morph one mesh into another over time, or to blend multiple meshes together into one result. This can be used, for example, to show the time-evolution of some object or the highlight differences between two meshes. Although this is a fairly specific use case shape keys aren't too difficult too understand and use, hence we include this section.</p>
+<p><em>Shape keys</em> can be used for a very specific type of animation: to morph one mesh into another over time, or to blend multiple meshes together into one result. This can be used, for example, to show the time-evolution of some object or the highlight differences between two meshes. Although this is a fairly specific use case, shape keys aren't too difficult too understand and use, hence we include this section.</p>
 <p>There are some limitations to using shape keys:</p>
 <ul>
 <li>The two meshes <strong>must</strong> have the same number of vertices</li>
@@ -922,7 +922,8 @@
   match then strange results during morphing can occur.</li>
 </ul>
 <p>The above is a fairly annoying limitation, but there is no easy way around it in Blender, unfortunately.</p>
-<p>XXX movie</p>
+<!---XXX movie--->
+
 <h2 id="exercise-poor-bunny">(EXERCISE) Poor Bunny<a class="headerlink" href="#exercise-poor-bunny" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Load <strong><code>bunny_shape_keys.blend</code></strong></li>
@@ -931,9 +932,9 @@
 </ol>
 <p>We'll now add some shape keys:</p>
 <ol start="4">
-<li>Select the regular Bunny</li>
-<li>Add a shape key under <code>Shape Keys</code> in the Mesh properties using the <strong><code>+</code></strong> button. The new shape keys will be called <code>Basis</code></li>
-<li>Add a second shape key, it will be called <code>Key 1</code> and have a default influence of 0</li>
+<li>Select the regular Bunny.</li>
+<li>Add a shape key under <code>Shape Keys</code> in the Mesh properties using the <strong><code>+</code></strong> button. The new shape keys will be called <code>Basis</code>.</li>
+<li>Add a second shape key, it will be called <code>Key 1</code> and have a default influence of 0.</li>
 <li>Select the <code>Key 1</code> shape key and enter mesh edit mode in the 3D view with <strong><code>TAB</code></strong> and make sure you're in vertex mode by pressing <strong><code>1</code></strong></li>
 <li>Select parts of the Bunny mesh and transform them as you like. The changes should be clearly visible.</li>
 <li>Exit mesh edit mode with <strong><code>TAB</code></strong>. You should notice that the mesh returns to its normal shape.</li>
@@ -942,20 +943,20 @@
 <p>Let's add another shape key:</p>
 <ol start="11">
 <li>Add a third shape key, it will be called <code>Key 2</code>. </li>
-<li>Select <code>Key 2</code> and apply a second set of mesh changes in edit mode</li>
-<li>Once again exit edit mode</li>
+<li>Select <code>Key 2</code> and apply a second set of mesh changes in edit mode.</li>
+<li>Once again exit edit mode.</li>
 <li>Play around with the influence values of both shape keys, as well as the checkboxes next to the influence values.</li>
 </ol>
 <p>Checking the difference between relative and absolute shape keys:</p>
 <ol start="15">
 <li>Uncheck the <code>Relative</code> checkbox to switch to absolute shape keys. Notice that the influence values have now disappeared.</li>
-<li>Change the <code>Evolution Time</code> value to understand how the morphing of the meshes is done now</li>
+<li>Change the <code>Evolution Time</code> value to understand how the morphing of the meshes is done now.</li>
 </ol>
 <p>Using another mesh to define a shape key:</p>
 <ol start="17">
 <li>Delete shape keys <code>Key 1</code> and <code>Key 2</code> using the <strong><code>-</code></strong> button and change back to relative shape keys by checking the <code>Relative</code> checkbox.</li>
 <li>Select the flattened mesh and the <strong><code>Shift-click</code></strong> the Bunny mesh. </li>
-<li>Open the shape key menu using the downwards arrow below the <strong><code>+</code></strong> and <strong><code>-</code></strong> buttons. Select <strong><code>Join as Shapes</code></strong></li>
+<li>Open the shape key menu using the downwards arrow below the <strong><code>+</code></strong> and <strong><code>-</code></strong> buttons. Select <strong><code>Join as Shapes</code></strong>.</li>
 <li>There should now be a new shape key called <code>flattened mesh</code>.</li>
 <li>Vary the influence of the <code>flattened mesh</code> shape key to see the Bunny melt.</li>
 <li>Delete the <code>flattened mesh</code> object in the Outliner. Does the shape key morphing to melt the Bunny still work?</li>
@@ -964,7 +965,7 @@
 <ol start="23">
 <li>Try to reason why the head of the Bunny is the last part to melt.</li>
 <li>Zoom in a bit to see if you can spot the twisting motion that mesh makes as it melts. </li>
-<li>Try to transform the mesh in the melted shape key in such as way as to minimize the twist. Or toy around with other mesh transforms to see what morphs come out</li>
+<li>Try to transform the mesh in the melted shape key in such as way as to minimize the twist. Or toy around with other mesh transforms to see what morphs come out.</li>
 </ol>
                 
                   
@@ -974,7 +975,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: May 24, 2021 16:33:00
+      Last update: May 24, 2021 22:12:14
     
   </small>
 </div>

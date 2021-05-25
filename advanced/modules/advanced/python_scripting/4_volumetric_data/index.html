@@ -582,7 +582,7 @@
   
     <li class="md-nav__item">
       <a href="../../advanced_materials/advanced_materials_assignment/" class="md-nav__link">
-        Advanced materials
+        (EXERCISE) The Shader Editor and advanced material topics
       </a>
     </li>
   
@@ -738,7 +738,7 @@
   
     <li class="md-nav__item">
       <a href="../../mesh_editing/mesh_editing_assignment/" class="md-nav__link">
-        (EXERCISE) Advanced Mesh Editing
+        (EXERCISE) Mesh Editing with the Edit mode
       </a>
     </li>
   
@@ -968,14 +968,14 @@
 </tr>
 </tbody>
 </table>
-<p>The reason OpenVDB is used for many uses of volumetric data in computer graphics is that is allows sparse volumes to be stored efficiently, while also providing easy querying of the data, for example during rendering. OpenVDB is also a bit more than just a file format, as the OpenVDB library also supports more advanced operations. From the OpenVDB website:</p>
+<p>The reason OpenVDB is used for many volumetric data applications in computer graphics is that is allows sparse volumes to be stored efficiently, while also providing easy querying of the data, for example during rendering. OpenVDB is also a bit more than just a file format, as the OpenVDB library also supports more advanced operations. From the OpenVDB website:</p>
 <blockquote>
 <p>OpenVDB is an Academy Award-winning C++ library comprising a hierarchical data structure and a suite of tools for the efficient manipulation of sparse, time-varying, volumetric data discretized on three-dimensional grids. It is based on VDB, which was developed by Ken Museth at DreamWorks Animation, and it offers an effectively infinite 3D index space, compact storage, fast data access, and a collection of algorithms specifically optimized for the data structure for common tasks such as filtering, CSG, compositing, numerical simulation, sampling, and voxelization from other geometric representations.</p>
 </blockquote>
 <p>For more documentation on OpenVDB see <a href="https://academysoftwarefoundation.github.io/openvdb/">here</a>. Some example OpenVDB files can be found <a href="https://www.openvdb.org/download/">here</a>, under Sample Models.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>OpenVDB models are mostly generated with specialized software like <a href="https://www.sidefx.com/">Houdini</a> and <a href="https://jangafx.com/software/embergen/">Embergen</a>. Volumetric data in general is also used for scientific visualizations, for example in <a href="https://www.paraview.org/">ParaView</a>, but support for OpenVDB is still lacking somewhat. In this section we will explain how OpenVDB files can be made from scratch. For example for when you have you own volumetric data in your own data format and you want to visualize or animate this in Blender. To convert your data to a OpenVDB format we will use the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. </p>
-<p>First we will create data in Python and write it to a OpenVDB file using <a href="https://www.openvdb.org/">OpenVDB</a> and the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. </p>
+<p>First we will create data in Python and write it to an OpenVDB file using <a href="https://www.openvdb.org/">OpenVDB</a> and the Python package <a href="https://pypi.org/project/pyopenvdb/"><code>pyopenvdb</code></a>. </p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x0Zlb7vyaO4" frameborder="0" allowfullscreen></iframe>
 
 <h2 id="installation-of-pyopenvdb">Installation of <code>pyopenvdb</code><a class="headerlink" href="#installation-of-pyopenvdb" title="Permanent link">&para;</a></h2>
@@ -1003,7 +1003,7 @@ We then fill a cube sized portion of the array with the value 1:
 
             array[i,j,k] = 1.0
 </code></pre></div>
-Now we come to the <code>openvdb</code> part, where we first need to make a grid. In this case we make a float grid (there are more grids and besides a float grid BoolGrid and Vec3SGrid are also standardly available).
+Now we come to the <code>openvdb</code> part, where we first need to make a grid. In this case we make a float grid (there are more grids besides a float grid for example a BoolGrid and Vec3SGrid are also standardly available).
 <div class="highlight"><pre><span></span><code>grid = vdb.FloatGrid()
 </code></pre></div>
 We now copy the values in the array into the grid:
@@ -1054,7 +1054,7 @@ The last thing left to do is to save the grid to file:
 <div class="md-source-date">
   <small>
     
-      Last update: May 24, 2021 10:10:55
+      Last update: May 24, 2021 22:26:38
     
   </small>
 </div>
