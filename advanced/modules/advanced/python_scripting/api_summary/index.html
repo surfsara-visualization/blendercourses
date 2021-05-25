@@ -616,8 +616,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#render-settings" class="md-nav__link">
-    Render settings
+  <a href="#rendering" class="md-nav__link">
+    Rendering
   </a>
   
 </li>
@@ -625,6 +625,13 @@
           <li class="md-nav__item">
   <a href="#animation" class="md-nav__link">
     Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    File I/O
   </a>
   
 </li>
@@ -1343,8 +1350,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#render-settings" class="md-nav__link">
-    Render settings
+  <a href="#rendering" class="md-nav__link">
+    Rendering
   </a>
   
 </li>
@@ -1352,6 +1359,13 @@
           <li class="md-nav__item">
   <a href="#animation" class="md-nav__link">
     Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    File I/O
   </a>
   
 </li>
@@ -1883,7 +1897,7 @@
 <li>Focal length: <code>Camera.lens</code>  (in mm)</li>
 <li>Clipping distances: <code>Camera.clip_start</code>, <code>Camera.clip_end</code></li>
 </ul>
-<h3 id="render-settings">Render settings<a class="headerlink" href="#render-settings" title="Permanent link">&para;</a></h3>
+<h3 id="rendering">Rendering<a class="headerlink" href="#rendering" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Image resolution: <ul>
 <li>Width: <code>Scene.render.settings.resolution_x</code></li>
@@ -1894,12 +1908,20 @@
 <li>Output file: <code>Scene.render.filepath</code></li>
 <li>Image output type: <code>Scene.render.image_settings.file_format</code> ("PNG", "JPEG", ...)</li>
 <li>Number of samples per pixel (Cycles): <code>Scene.cycles.samples</code></li>
+<li>Render current scene: <code>bpy.ops.render.render()</code>. See <a href="https://docs.blender.org/api/current/bpy.ops.render.html?highlight=bpy%20ops%20render%20render#bpy.ops.render.render">parameters</a> how to control the specific type of render (still image versus animation) and whether to save output</li>
 </ul>
 <h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Current frame <code>Scene.frame_current</code></li>
 <li>Frame range: <code>Scene.frame_start</code>, <code>Scene.frame_end</code></li>
 <li>Frame rate: <code>Scene.render.fps</code></li>
+</ul>
+<h3 id="file-io">File I/O<a class="headerlink" href="#file-io" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Save the current session to a specific file: <code>bpy.ops.wm.save_as_mainfile()</code></li>
+<li>Open Blend file <code>bpy.ops.wm.open_mainfile()</code></li>
+<li>Import a file (call depends on file type): <code>bpy.ops.import_scene.obj()</code> (OBJ scene), <code>bpy.ops.import_scene.gltf</code> (glTF scene), <code>bpy.ops.import_mesh.ply</code> (PLY mesh), etc. See <a href="https://docs.blender.org/api/current/bpy.ops.import_scene.html">here</a> and <a href="https://docs.blender.org/api/current/bpy.ops.import_mesh.html?highlight=import_mesh#module-bpy.ops.import_mesh">here</a></li>
+<li>Export a file (call depends on file type) follows the same call names, see <a href="https://docs.blender.org/api/current/bpy.ops.export_scene.html?highlight=export_scene#module-bpy.ops.export_scene">here</a> and <a href="https://docs.blender.org/api/current/bpy.ops.export_mesh.html?highlight=export_mesh#module-bpy.ops.export_mesh">here</a></li>
 </ul>
 <h2 id="object-transformations">Object transformations<a class="headerlink" href="#object-transformations" title="Permanent link">&para;</a></h2>
 <p>The <code>matrix_world</code> attribute of an <code>Object</code> contains the object-to-world transform that places the object in the 3D scene:</p>
@@ -3084,7 +3106,7 @@ layer set controls, for example, which vertex colors are visible in the 3D viewp
 <div class="md-source-date">
   <small>
     
-      Last update: May 24, 2021 09:45:41
+      Last update: May 25, 2021 08:48:23
     
   </small>
 </div>
