@@ -968,8 +968,8 @@
 <ol>
 <li>First, make sure the whole mesh is selected by pressing <strong><code>a</code></strong> and then remove the small holes (the size of one triangle/quad) by pressing <strong><code>F3</code></strong> in the <em>3D viewport</em> in <em>Edit mode</em> and type in <strong><code>fill holes</code></strong> and press <strong><code>enter</code></strong> or click on it with <strong><code>LMB</code></strong> (this might take some time). Now this already cleaned up a lot of the holes in the geometry!</li>
 <li>Through inspection you might notices there are some bigger wholes that were not filled yet because they were skipped by the previous step since they were to large. To fill these they first need to be selected by first de-selecting everything with <strong><code>alt-a</code></strong> and then press <strong><code>F3</code></strong> and type in <strong><code>non manifold</code></strong> and press <strong><code>enter</code></strong> or click on it with <strong><code>LMB</code></strong>.</li>
-<li>This selected the big holes but also other non-<a href="https://en.wikipedia.org/wiki/Manifold">manifold</a> geometry. To select only one of the holes <strong><code>hold CTRL+SHIFT</code></strong> and drag with <strong><code>LMB</code></strong> over one of the holes. This de-selects everything excepts what was in the drag-box.</li>
-<li>Now this selected whole can easily be fixed by pressing <strong><code>f</code></strong>.</li>
+<li>This selected the big holes but also other non-<a href="https://en.wikipedia.org/wiki/Manifold">manifold</a> geometry. To select only one of the holes <em>hold</em> <strong><code>CTRL+SHIFT</code></strong> and drag with <strong><code>LMB</code></strong> over one of the holes. This de-selects everything excepts what was in the drag-box.</li>
+<li>Now this selected hole can easily be fixed by pressing <strong><code>f</code></strong>.</li>
 <li>Repeat step 2 to 4 for the other 2 holes.</li>
 </ol>
 <p><strong>Tip!</strong>: The fill with <strong><code>f</code></strong> fills the hole with an n-gon, a face with more then 4 vertices. These can sometimes create shading artifacts in your final render. Another way to fill these holes is to use grid-fill (<strong><code>ctrl+f</code></strong>), this tries to fill the whole with a grid of quad shaped faces. This however might not always work for numerous reasons (uneven amount of vertices, closed loops etc) which can be fixed with additional mesh editing but the easy route would be to fill it with an n-gon face.</p>
@@ -1009,7 +1009,7 @@ Unfortunately, this occurs frequently with this type of sensor-based 3D data.</l
 <div class="md-source-date">
   <small>
     
-      Last update: May 24, 2021 22:03:29
+      Last update: July 26, 2021 08:07:41
     
   </small>
 </div>
